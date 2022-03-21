@@ -29,36 +29,19 @@ class DeviceViewController: BaseViewController {
         tableView.reloadData()
         
         viewModel.completionOnPresentLoginViewController = {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else { return }
-            
-            controller.completion = { result in
-                switch result {
-                case .success:
+            super.presentLogin {
+                
+                self.viewModel.completionOnUpdateUI = { device in
                     DispatchQueue.main.async {
-                        controller.dismiss(animated: true)
-                        
-                        self.viewModel.completionOnUpdateUI = { device in
-                            DispatchQueue.main.async {
-                                self.container.removeAll()
-                                self.container = device
-                                self.tableView.reloadData()
-                                super.removeLoadingView()
-                            }
-                        }
-                        self.viewModel.getDeviceInfo()
-                    }
-                case .failure(let error):
-                    let alert = UIAlertController(title: "Login failed", message: error.localizedDescription, preferredStyle: .alert)
-                    let action = UIAlertAction(title: "Ok", style: .cancel)
-                    alert.addAction(action)
-                    DispatchQueue.main.async {
-                        controller.present(alert, animated: true)
+                        self.container.removeAll()
+                        self.container = device
+                        self.tableView.reloadData()
+                        super.removeLoadingView()
                     }
                 }
+                
+                self.viewModel.getDeviceInfo()
             }
-            
-            self.present(controller, animated: true)
         }
         
         viewModel.completionOnUpdateUI = { device in

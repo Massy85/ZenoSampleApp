@@ -30,36 +30,18 @@ class NotificationViewController: BaseViewController {
         tableView.reloadData()
         
         viewModel.completionOnPresentLoginViewController = {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else { return }
-            
-            controller.completion = { result in
-                switch result {
-                case .success:
+            super.presentLogin {
+                self.viewModel.completionOnUpdateUI = { events in
                     DispatchQueue.main.async {
-                        controller.dismiss(animated: true)
-                        
-                        self.viewModel.completionOnUpdateUI = { events in
-                            DispatchQueue.main.async {
-                                self.container.removeAll()
-                                self.container = events
-                                self.tableView.reloadData()
-                                super.removeLoadingView()
-                            }
-                        }
-                        self.viewModel.getEvents()
-                    }
-                case .failure(let error):
-                    let alert = UIAlertController(title: "Login failed", message: error.localizedDescription, preferredStyle: .alert)
-                    let action = UIAlertAction(title: "Ok", style: .cancel)
-                    alert.addAction(action)
-                    DispatchQueue.main.async {
-                        controller.present(alert, animated: true)
+                        self.container.removeAll()
+                        self.container = events
+                        self.tableView.reloadData()
+                        super.removeLoadingView()
                     }
                 }
+                
+                self.viewModel.getEvents()
             }
-            
-            self.present(controller, animated: true)
         }
         
         viewModel.completionOnUpdateUI = { events in

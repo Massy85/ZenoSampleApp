@@ -33,49 +33,30 @@ class DashboardViewController: BaseViewController {
         tableView.reloadData()
         
         viewModel.completionOnPresentLoginViewController = {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else { return }
-            
-            controller.completion = { result in
-                switch result {
-                case .success:
+            super.presentLogin {
+                self.viewModel.completionOnUpdateUI = { objects, text, state in
                     DispatchQueue.main.async {
-                        controller.dismiss(animated: true)
                         
-                        self.viewModel.completionOnUpdateUI = { objects, text, state in
-                            DispatchQueue.main.async {
-                                
-                                switch state {
-                                case .unowned:
-                                    self.statusView.backgroundColor = UIColor(named: "alarm")
-                                case .arm:
-                                    self.statusView.backgroundColor = UIColor(named: "arm")
-                                case .disarm:
-                                    self.statusView.backgroundColor = UIColor(named: "disarm")
-                                case .home_1, .home_2, .home_3:
-                                    self.statusView.backgroundColor = UIColor(named: "partial")
-                                }
-                                
-                                self.container.removeAll()
-                                self.panelStateLabel.text = text
-                                self.container = objects
-                                self.tableView.reloadData()
-                                super.removeLoadingView()
-                            }
+                        switch state {
+                        case .unowned:
+                            self.statusView.backgroundColor = UIColor(named: "alarm")
+                        case .arm:
+                            self.statusView.backgroundColor = UIColor(named: "arm")
+                        case .disarm:
+                            self.statusView.backgroundColor = UIColor(named: "disarm")
+                        case .home_1, .home_2, .home_3:
+                            self.statusView.backgroundColor = UIColor(named: "partial")
                         }
-                        self.viewModel.getPanelMode()
-                    }
-                case .failure(let error):
-                    let alert = UIAlertController(title: "Login failed", message: error.localizedDescription, preferredStyle: .alert)
-                    let action = UIAlertAction(title: "Ok", style: .cancel)
-                    alert.addAction(action)
-                    DispatchQueue.main.async {
-                        controller.present(alert, animated: true)
+                        
+                        self.container.removeAll()
+                        self.panelStateLabel.text = text
+                        self.container = objects
+                        self.tableView.reloadData()
+                        super.removeLoadingView()
                     }
                 }
+                self.viewModel.getPanelMode()
             }
-            
-            self.present(controller, animated: true)
         }
         
         viewModel.completionOnUpdateUI = { objects, text, state in
