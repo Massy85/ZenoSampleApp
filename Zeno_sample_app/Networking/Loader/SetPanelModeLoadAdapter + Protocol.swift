@@ -7,17 +7,17 @@
 
 import Foundation
 
-public enum MasterMode: String {
-    case unknow
-    case arm
-    case disarm
-    case home_1
-    case home_2
-    case home_3
-    case home_1_2
-    case home_1_3
-    case home_2_3
-}
+//public enum MasterMode: String {
+//    case unknow
+//    case arm
+//    case disarm
+//    case home_1
+//    case home_2
+//    case home_3
+//    case home_1_2
+//    case home_1_3
+//    case home_2_3
+//}
 
 internal protocol SetPanelModeLoader {
     typealias Result = Swift.Result<PanelModePostMO, Error>
@@ -30,7 +30,7 @@ internal class SetPanelModeLoaderAdapter {
     // MARK: - Properties
     
     private let token: String
-    private let mode: MasterMode
+    private let mode: ZenoState
     private let area: String
     private let pincode: String
     private let format: String
@@ -51,7 +51,7 @@ internal class SetPanelModeLoaderAdapter {
     
     // MARK: - Lifecycle
     
-    internal init(token: String, mode: MasterMode, area: String = "1", pincode: String = "1234", format: String = "1", bypass: String = "1", client: HTTPClient) {
+    internal init(token: String, mode: ZenoState, area: String = "1", pincode: String = "1234", format: String = "1", bypass: String = "1", client: HTTPClient) {
         self.token = token
         self.mode = mode
         self.area = area

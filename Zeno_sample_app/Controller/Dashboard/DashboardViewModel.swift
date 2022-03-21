@@ -18,7 +18,6 @@ enum Partial {
     case home_2
     case home_3
 }
-//
 
 enum ButtonType {
     case arm
@@ -26,58 +25,6 @@ enum ButtonType {
     case partial
 }
 
-enum StateArea {
-    case unowned
-    case arm
-    case disarm
-    case home_1
-    case home_2
-    case home_3
-    case home_1_2
-    case home_1_3
-    case home_2_3
-}
-
-enum Command {
-    case arm
-    case disarm
-    case home_1
-    case home_2
-    case home_3
-    case home_1_2
-    case home_1_3
-    case home_2_3
-    
-    var command: [StateArea] {
-        switch self {
-        case .arm:
-            return [.arm]
-        case .disarm:
-            return [.home_1]
-        case .home_1:
-            return [.home_1]
-        case .home_2:
-            return [.home_2]
-        case .home_3:
-            return [.home_3]
-        case .home_1_2:
-            return [.home_1, .home_2]
-        case .home_1_3:
-            return [.home_1, .home_3]
-        case .home_2_3:
-            return [.home_2, .home_3]
-        }
-    }
-}
-struct PartialState {
-    var home_1: [StateArea] = [.home_1]
-    var home_2: [StateArea] = [.home_2]
-    var home_3: [StateArea] = [.home_3]
-    var home_1_2: [StateArea] = [.home_1, .home_2]
-    var home_1_3: [StateArea] = [.home_1, .home_3]
-    var home_2_3: [StateArea] = [.home_2, .home_3]
-}
-//
 protocol ViewModelProtocol: AnyObject {
     func presentLoginController()
     func updatePanelStateLabel(_ text: String)
@@ -101,11 +48,9 @@ class DashboardViewModel {
     }
     
     func getPanelMode() {
-        
         client.completionOnGetPanelMode = { result in
             switch result {
             case .success(let panelModeMO):
-                
                 guard let mode = panelModeMO.mode else { return }
                 
                 var container = [ZenoCellObject]()
@@ -113,149 +58,20 @@ class DashboardViewModel {
                 
                 switch mode {
                 case .arm:
-                    text = "La case è protetta"
-                    let first = ZenoCellObject(
-                        title: "Arma totale",
-                        state: .arm,
-                        expandable: false,
-                        isHighlighted: true,
-                        isEnabled: false,
-                        buttonType: .arm
-                    )
-                    container.append(first)
-                    let second = ZenoCellObject(
-                        title: "Disarma",
-                        state: .unowned,
-                        expandable: false,
-                        isHighlighted: false, isEnabled: true,
-                        buttonType: .disarm
-                    )
-                    container.append(second)
-                    let third = ZenoCellObject(
-                        title: "Parzializza",
-                        state: .unowned,
-                        expandable: true,
-                        isHighlighted: false,
-                        isEnabled: false,
-                        buttonType: .partial
-                    )
-                    container.append(third)
+                    text = self.createCellForArmState().text
+                    container = self.createCellForArmState().cellObjects
                 case .disarm:
-                    text = "La case non è protetta"
-                    let first = ZenoCellObject(
-                        title: "Arma totale",
-                        state: .unowned,
-                        expandable: false,
-                        isHighlighted: false,
-                        isEnabled: true,
-                        buttonType: .arm
-                    )
-                    container.append(first)
-                    let second = ZenoCellObject(
-                        title: "Disarma",
-                        state: .disarm,
-                        expandable: false,
-                        isHighlighted: true,
-                        isEnabled: false,
-                        buttonType: .disarm
-                    )
-                    container.append(second)
-                    let third = ZenoCellObject(
-                        title: "Parzializza",
-                        state: .unowned,
-                        expandable: true,
-                        isHighlighted: false,
-                        isEnabled: true,
-                        buttonType: .partial
-                    )
-                    container.append(third)
+                    text = self.createCellForDisarmState().text
+                    container = self.createCellForDisarmState().cellObjects
                 case .home_1:
-                    text = "PARZIALIZZAZIONE A"
-                    let first = ZenoCellObject(
-                        title: "Arma totale",
-                        state: .unowned,
-                        expandable: false,
-                        isHighlighted: false,
-                        isEnabled: true,
-                        buttonType: .arm
-                    )
-                    container.append(first)
-                    let second = ZenoCellObject(
-                        title: "Disarma",
-                        state: .unowned,
-                        expandable: false,
-                        isHighlighted: false,
-                        isEnabled: true,
-                        buttonType: .disarm
-                    )
-                    container.append(second)
-                    let third = ZenoCellObject(
-                        title: "Parzializza",
-                        state: .home_1,
-                        expandable: true,
-                        isHighlighted: true,
-                        isEnabled: false,
-                        buttonType: .partial
-                    )
-                    container.append(third)
+                    text = self.createCellForHome1State().text
+                    container = self.createCellForHome1State().cellObjects
                 case .home_2:
-                    text = "PARZIALIZZAZIONE B"
-                    let first = ZenoCellObject(
-                        title: "Arma totale",
-                        state: .unowned,
-                        expandable: false,
-                        isHighlighted: false,
-                        isEnabled: true,
-                        buttonType: .arm
-                    )
-                    container.append(first)
-                    let second = ZenoCellObject(
-                        title: "Disarma",
-                        state: .unowned,
-                        expandable: false,
-                        isHighlighted: false,
-                        isEnabled: true,
-                        buttonType: .disarm
-                    )
-                    container.append(second)
-                    let third = ZenoCellObject(
-                        title: "Parzializza",
-                        state: .home_2,
-                        expandable: true,
-                        isHighlighted: true,
-                        isEnabled: false,
-                        buttonType: .partial
-                    )
-                    container.append(third)
+                    text = self.createCellForHome2State().text
+                    container = self.createCellForHome2State().cellObjects
                 case .home_3:
-                    text = "PARZIALIZZAZIONE C"
-                    let first = ZenoCellObject(
-                        title: "Arma totale",
-                        state: .unowned,
-                        expandable: false,
-                        isHighlighted: false,
-                        isEnabled: true,
-                        buttonType: .arm
-                    )
-                    container.append(first)
-                    let second = ZenoCellObject(
-                        title: "Disarma",
-                        state: .unowned,
-                        expandable: false,
-                        isHighlighted: false,
-                        isEnabled: true,
-                        buttonType: .disarm
-                    )
-                    container.append(second)
-                    let third = ZenoCellObject(
-                        title: "Parzializza",
-                        state: .home_3,
-                        expandable: true,
-                        isHighlighted: true,
-                        isEnabled: false,
-                        buttonType: .partial
-                    )
-                    container.append(third)
+                    text = self.createCellForHome3State().text
+                    container = self.createCellForHome3State().cellObjects
                 default: break
                 }
                 
@@ -272,62 +88,197 @@ class DashboardViewModel {
     }
     
     func totalArm() {
-        client.completionOnSetPanelMode = { result in
-            switch result {
-            case .success:
-                self.client.resumePolling()
-            case .failure(let error):
-                fatalError()
-            }
+        client.completionOnSetPanelMode = { _ in
+            self.client.resumePolling()
         }
-        
+
         client.setPanelModeAt(.arm)
     }
     
     func disarm() {
-        client.completionOnSetPanelMode = { result in
-            switch result {
-            case .success:
-                self.client.resumePolling()
-            case .failure(let error):
-                fatalError()
-            }
+        client.completionOnSetPanelMode = { _ in
+            self.client.resumePolling()
         }
         
         client.setPanelModeAt(.disarm)
     }
 
-    func partialArm(_ state: Command) {
-        let group = DispatchGroup()
-        
-        client.completionOnSetPanelMode = { result in
-            switch result {
-            case .success:
-                self.client.resumePolling()
-            case .failure(let error):
-                fatalError()
-            }
-            group.leave()
+    func partialArm(_ state: ZenoState) {
+        client.completionOnSetPanelMode = { _ in
+            self.client.resumePolling()
         }
         
-        let commands = state.command
+        client.setPanelModeAt(state)
+    }
+}
+
+extension DashboardViewModel {
+    private func createCellForArmState() -> (text: String, cellObjects: [ZenoCellObject]) {
+        let text = "La case è protetta"
+        var container = [ZenoCellObject]()
         
+        let first = ZenoCellObject(
+            title: "Arma totale",
+            state: .arm,
+            expandable: false,
+            isHighlighted: true,
+            isEnabled: false,
+            buttonType: .arm
+        )
+        container.append(first)
+        let second = ZenoCellObject(
+            title: "Disarma",
+            state: .unowned,
+            expandable: false,
+            isHighlighted: false, isEnabled: true,
+            buttonType: .disarm
+        )
+        container.append(second)
+        let third = ZenoCellObject(
+            title: "Parzializza",
+            state: .unowned,
+            expandable: true,
+            isHighlighted: false,
+            isEnabled: false,
+            buttonType: .partial
+        )
+        container.append(third)
+        return (text, container)
+    }
+    
+    private func createCellForDisarmState() -> (text: String, cellObjects: [ZenoCellObject]) {
+        let text = "La case non è protetta"
+        var container = [ZenoCellObject]()
         
-        commands.forEach {
-            switch $0 {
-            case .arm:
-                client.setPanelModeAt(.arm)
-            case .disarm:
-                client.setPanelModeAt(.home_1)
-            case .home_1:
-                client.setPanelModeAt(.home_1)
-            case .home_2:
-                client.setPanelModeAt(.home_2)
-            case .home_3:
-                client.setPanelModeAt(.home_3)
-            default : break
-            }
-            group.enter()
-        }
+        let first = ZenoCellObject(
+            title: "Arma totale",
+            state: .unowned,
+            expandable: false,
+            isHighlighted: false,
+            isEnabled: true,
+            buttonType: .arm
+        )
+        container.append(first)
+        let second = ZenoCellObject(
+            title: "Disarma",
+            state: .disarm,
+            expandable: false,
+            isHighlighted: true,
+            isEnabled: false,
+            buttonType: .disarm
+        )
+        container.append(second)
+        let third = ZenoCellObject(
+            title: "Parzializza",
+            state: .unowned,
+            expandable: true,
+            isHighlighted: false,
+            isEnabled: true,
+            buttonType: .partial
+        )
+        container.append(third)
+        return (text, container)
+    }
+    
+    private func createCellForHome1State() -> (text: String, cellObjects: [ZenoCellObject]) {
+        let text = "PARZIALIZZAZIONE A"
+        var container = [ZenoCellObject]()
+        
+        let first = ZenoCellObject(
+            title: "Arma totale",
+            state: .unowned,
+            expandable: false,
+            isHighlighted: false,
+            isEnabled: true,
+            buttonType: .arm
+        )
+        container.append(first)
+        let second = ZenoCellObject(
+            title: "Disarma",
+            state: .unowned,
+            expandable: false,
+            isHighlighted: false,
+            isEnabled: true,
+            buttonType: .disarm
+        )
+        container.append(second)
+        let third = ZenoCellObject(
+            title: "Parzializza",
+            state: .home_1,
+            expandable: true,
+            isHighlighted: true,
+            isEnabled: false,
+            buttonType: .partial
+        )
+        container.append(third)
+        return (text, container)
+    }
+    
+    private func createCellForHome2State() -> (text: String, cellObjects: [ZenoCellObject]) {
+        let text = "PARZIALIZZAZIONE B"
+        var container = [ZenoCellObject]()
+        
+        let first = ZenoCellObject(
+            title: "Arma totale",
+            state: .unowned,
+            expandable: false,
+            isHighlighted: false,
+            isEnabled: true,
+            buttonType: .arm
+        )
+        container.append(first)
+        let second = ZenoCellObject(
+            title: "Disarma",
+            state: .unowned,
+            expandable: false,
+            isHighlighted: false,
+            isEnabled: true,
+            buttonType: .disarm
+        )
+        container.append(second)
+        let third = ZenoCellObject(
+            title: "Parzializza",
+            state: .home_2,
+            expandable: true,
+            isHighlighted: true,
+            isEnabled: false,
+            buttonType: .partial
+        )
+        container.append(third)
+        return (text, container)
+    }
+    
+    private func createCellForHome3State() -> (text: String, cellObjects: [ZenoCellObject]) {
+        let text = "PARZIALIZZAZIONE C"
+        var container = [ZenoCellObject]()
+        
+        let first = ZenoCellObject(
+            title: "Arma totale",
+            state: .unowned,
+            expandable: false,
+            isHighlighted: false,
+            isEnabled: true,
+            buttonType: .arm
+        )
+        container.append(first)
+        let second = ZenoCellObject(
+            title: "Disarma",
+            state: .unowned,
+            expandable: false,
+            isHighlighted: false,
+            isEnabled: true,
+            buttonType: .disarm
+        )
+        container.append(second)
+        let third = ZenoCellObject(
+            title: "Parzializza",
+            state: .home_3,
+            expandable: true,
+            isHighlighted: true,
+            isEnabled: false,
+            buttonType: .partial
+        )
+        container.append(third)
+        return (text, container)
     }
 }

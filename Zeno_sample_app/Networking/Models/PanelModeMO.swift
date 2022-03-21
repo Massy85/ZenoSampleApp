@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ZenoState {
+public enum ZenoState: String {
     case unowned
     case arm
     case disarm

@@ -70,7 +70,7 @@ public class ZenoClient {
     
     public var completionOnSetPanelMode: ((SETPanelModeResult) -> Void)?
     
-    public func setPanelModeAt(_ mode: MasterMode) {
+    public func setPanelModeAt(_ mode: ZenoState) {
         guard let token = token else { return }
         
         timer?.invalidate()
