@@ -1,8 +1,8 @@
 //
-//  DashboardViewModel.swift
+//  ZenoViewModel.swift
 //  Zeno_sample_app
 //
-//  Created by Massimiliano Bonafede on 14/03/22.
+//  Created by Massimiliano Bonafede on 18/03/22.
 //
 
 import Foundation
@@ -25,21 +25,15 @@ enum ButtonType {
     case partial
 }
 
-protocol ViewModelProtocol: AnyObject {
-    func presentLoginController()
-    func updatePanelStateLabel(_ text: String)
-    func updateButtons(_ state: State)
-}
-
-class DashboardViewModel {
-    
+class ZenoViewModel {
     let client = ZenoClient.shared
-    
     var completionOnPresentLoginViewController: (() -> Void)?
-    var completionOnUpdateUI: (([ZenoCellObject], String, ZenoState) -> Void)?
+    var completionOnState: (([ZenoCellObject], String, ZenoState) -> Void)?
+    var completionOnevents: (([EventDataMO]) -> Void)?
+    var completionOnDevice: (([PanelDeviceDataMO]) -> Void)?
     
     init() {}
-
+    
     func checkForLogin() {
         if client.loginIsNeeded {
             completionOnPresentLoginViewController?()
@@ -75,7 +69,7 @@ class DashboardViewModel {
                 default: break
                 }
                 
-                self.completionOnUpdateUI?(container, text, mode)
+                self.completionOnState?(container, text, mode)
             case .failure:
                 DispatchQueue.main.async {
                     self.completionOnPresentLoginViewController?()
@@ -110,9 +104,42 @@ class DashboardViewModel {
         
         client.setPanelModeAt(state)
     }
+    
+    func getEvents() {
+        client.completionOnEvents = { result in
+            switch result {
+            case .success(let events):
+                self.client.resumePolling()
+                guard let data = events.data else { return }
+                self.completionOnevents?(data)
+            case .failure:
+                DispatchQueue.main.async {
+                    self.completionOnPresentLoginViewController?()
+                }
+            }
+        }
+        
+        client.getEvents()
+    }
+    
+    func getDeviceInfo() {
+        client.completionOnPanelDevice = { result in
+            switch result {
+            case .success(let panelDeviceMO):
+                guard let data = panelDeviceMO.data else { return }
+                self.completionOnDevice?(data)
+            case .failure:
+                DispatchQueue.main.async {
+                    self.completionOnPresentLoginViewController?()
+                }
+            }
+        }
+        
+        client.getPanelDevice()
+    }
 }
 
-extension DashboardViewModel {
+extension ZenoViewModel {
     private func createCellForArmState() -> (text: String, cellObjects: [ZenoCellObject]) {
         let text = "La case è protetta"
         var container = [ZenoCellObject]()

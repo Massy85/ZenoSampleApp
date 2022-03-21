@@ -9,13 +9,18 @@ import UIKit
 
 class DashboardViewController: BaseViewController {
 
+    // MARK: - Outlets
+
     @IBOutlet weak var panelStateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var statusView: UIView!
     
-    let viewModel = DashboardViewModel()
+    // MARK: - Properties
+
     var container = [ZenoCellObject]()
     
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib(nibName: "ZenoCell", bundle: nil)
@@ -25,8 +30,6 @@ class DashboardViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        super.addLoadingView()
-        
         tableView.isScrollEnabled = false
         tableView.delegate = self
         tableView.dataSource = self
@@ -34,7 +37,7 @@ class DashboardViewController: BaseViewController {
         
         viewModel.completionOnPresentLoginViewController = {
             super.presentLogin {
-                self.viewModel.completionOnUpdateUI = { objects, text, state in
+                self.viewModel.completionOnState = { objects, text, state in
                     DispatchQueue.main.async {
                         
                         switch state {
@@ -59,7 +62,7 @@ class DashboardViewController: BaseViewController {
             }
         }
         
-        viewModel.completionOnUpdateUI = { objects, text, state in
+        viewModel.completionOnState = { objects, text, state in
             DispatchQueue.main.async {
                 
                 switch state {
@@ -85,6 +88,8 @@ class DashboardViewController: BaseViewController {
         viewModel.getPanelMode()
     }
 }
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     

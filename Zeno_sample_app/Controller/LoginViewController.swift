@@ -13,19 +13,20 @@ protocol LoginControllerProtocol: AnyObject {
 
 class LoginViewController: UIViewController {
 
+    // MARK: - Outlets
+
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
 
+    // MARK: - Properties
+
     let client = ZenoClient.shared
     weak var delegate: LoginControllerProtocol?
     var completion: ((ZenoClient.LoginResult) -> Void)?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
  
+    // MARK: - Actions
+
     @IBAction func loginButtonWasPressed(_ sender: UIButton) {
         guard let username = usernameTextField.text, let password = passwordTextField.text else { return }
         
@@ -35,5 +36,4 @@ class LoginViewController: UIViewController {
         
         client.login(username, password)
     }
-    
 }

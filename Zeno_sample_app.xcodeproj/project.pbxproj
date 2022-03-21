@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7010757B27E4D4590031BC00 /* EventsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7010757927E4D4590031BC00 /* EventsCell.swift */; };
 		7010757C27E4D4590031BC00 /* EventsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7010757A27E4D4590031BC00 /* EventsCell.xib */; };
-		7010757F27E4DA080031BC00 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7010757E27E4DA080031BC00 /* NotificationViewModel.swift */; };
 		70194A8227E1D50200B118D7 /* LoginLoaderAdapter + Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A8027E1D4CF00B118D7 /* LoginLoaderAdapter + Protocol.swift */; };
 		70194A8327E1D51200B118D7 /* Client+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7057993F27E1CD0B00003347 /* Client+Protocol.swift */; };
 		70194A8827E1DEE200B118D7 /* LoginTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A8727E1DEE200B118D7 /* LoginTestAPI.swift */; };
@@ -34,13 +33,12 @@
 		7068CD6C27E38B8700973829 /* ZenoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7068CD6A27E38B8700973829 /* ZenoCell.swift */; };
 		7068CD6D27E38B8700973829 /* ZenoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7068CD6B27E38B8700973829 /* ZenoCell.xib */; };
 		70BB370327E4E51D00ED27CA /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BB370227E4E51D00ED27CA /* DeviceViewController.swift */; };
-		70BB370527E4E53400ED27CA /* DeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BB370427E4E53400ED27CA /* DeviceViewModel.swift */; };
+		70BB370527E4E53400ED27CA /* ZenoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BB370427E4E53400ED27CA /* ZenoViewModel.swift */; };
 		70BB370827E4E62C00ED27CA /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BB370627E4E62C00ED27CA /* DeviceCell.swift */; };
 		70BB370927E4E62C00ED27CA /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70BB370727E4E62C00ED27CA /* DeviceCell.xib */; };
 		70BCD28C27DF84570046C3DA /* ZenoTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCD28B27DF84570046C3DA /* ZenoTabBar.swift */; };
 		70BCD28E27DF84EF0046C3DA /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCD28D27DF84EF0046C3DA /* DashboardViewController.swift */; };
 		70BCD29027DF8FB80046C3DA /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCD28F27DF8FB80046C3DA /* NotificationViewController.swift */; };
-		70BCD29227DF946E0046C3DA /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCD29127DF946E0046C3DA /* DashboardViewModel.swift */; };
 		70BE6BD227984864001CE0F4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BE6BD127984864001CE0F4 /* LoginViewController.swift */; };
 		70E3142327971BF1009D913C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E3142227971BF1009D913C /* AppDelegate.swift */; };
 		70E3142527971BF1009D913C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E3142427971BF1009D913C /* SceneDelegate.swift */; };
@@ -63,7 +61,6 @@
 /* Begin PBXFileReference section */
 		7010757927E4D4590031BC00 /* EventsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCell.swift; sourceTree = "<group>"; };
 		7010757A27E4D4590031BC00 /* EventsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsCell.xib; sourceTree = "<group>"; };
-		7010757E27E4DA080031BC00 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		70194A8027E1D4CF00B118D7 /* LoginLoaderAdapter + Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginLoaderAdapter + Protocol.swift"; sourceTree = "<group>"; };
 		70194A8727E1DEE200B118D7 /* LoginTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestAPI.swift; sourceTree = "<group>"; };
 		70194A8A27E1F5FB00B118D7 /* LoginMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMO.swift; sourceTree = "<group>"; };
@@ -88,13 +85,12 @@
 		7068CD6A27E38B8700973829 /* ZenoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenoCell.swift; sourceTree = "<group>"; };
 		7068CD6B27E38B8700973829 /* ZenoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZenoCell.xib; sourceTree = "<group>"; };
 		70BB370227E4E51D00ED27CA /* DeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
-		70BB370427E4E53400ED27CA /* DeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewModel.swift; sourceTree = "<group>"; };
+		70BB370427E4E53400ED27CA /* ZenoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenoViewModel.swift; sourceTree = "<group>"; };
 		70BB370627E4E62C00ED27CA /* DeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
 		70BB370727E4E62C00ED27CA /* DeviceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceCell.xib; sourceTree = "<group>"; };
 		70BCD28B27DF84570046C3DA /* ZenoTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenoTabBar.swift; sourceTree = "<group>"; };
 		70BCD28D27DF84EF0046C3DA /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		70BCD28F27DF8FB80046C3DA /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
-		70BCD29127DF946E0046C3DA /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		70BE6BD127984864001CE0F4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		70E3141F27971BF1009D913C /* Zeno_sample_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zeno_sample_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E3142227971BF1009D913C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,15 +121,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7010757D27E4D9F20031BC00 /* Notification */ = {
-			isa = PBXGroup;
-			children = (
-				70BCD28F27DF8FB80046C3DA /* NotificationViewController.swift */,
-				7010757E27E4DA080031BC00 /* NotificationViewModel.swift */,
-			);
-			path = Notification;
-			sourceTree = "<group>";
-		};
 		70194A8427E1DE9E00B118D7 /* RealAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,28 +145,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		702D933727E86FDA00A04084 /* Login */ = {
+		702D933C27E8871300A04084 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				70BE6BD127984864001CE0F4 /* LoginViewController.swift */,
+				70BB370427E4E53400ED27CA /* ZenoViewModel.swift */,
 			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		702D933827E86FEE00A04084 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				70BCD28B27DF84570046C3DA /* ZenoTabBar.swift */,
-			);
-			path = TabBar;
-			sourceTree = "<group>";
-		};
-		702D933927E873CF00A04084 /* BaseViewController */ = {
-			isa = PBXGroup;
-			children = (
-				702D933A27E873F900A04084 /* BaseViewController.swift */,
-			);
-			path = BaseViewController;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		7057993C27E1CCC900003347 /* Networking */ = {
@@ -222,15 +193,6 @@
 			path = URLRequests;
 			sourceTree = "<group>";
 		};
-		7068CD6427E33CA800973829 /* Dashboard */ = {
-			isa = PBXGroup;
-			children = (
-				70BCD28D27DF84EF0046C3DA /* DashboardViewController.swift */,
-				70BCD29127DF946E0046C3DA /* DashboardViewModel.swift */,
-			);
-			path = Dashboard;
-			sourceTree = "<group>";
-		};
 		7068CD6527E3842700973829 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,24 +208,15 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		70BB370127E4E4FE00ED27CA /* Device */ = {
-			isa = PBXGroup;
-			children = (
-				70BB370227E4E51D00ED27CA /* DeviceViewController.swift */,
-				70BB370427E4E53400ED27CA /* DeviceViewModel.swift */,
-			);
-			path = Device;
-			sourceTree = "<group>";
-		};
 		70BE6BD02798484C001CE0F4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				702D933927E873CF00A04084 /* BaseViewController */,
-				702D933827E86FEE00A04084 /* TabBar */,
-				702D933727E86FDA00A04084 /* Login */,
-				70BB370127E4E4FE00ED27CA /* Device */,
-				7010757D27E4D9F20031BC00 /* Notification */,
-				7068CD6427E33CA800973829 /* Dashboard */,
+				70BCD28B27DF84570046C3DA /* ZenoTabBar.swift */,
+				702D933A27E873F900A04084 /* BaseViewController.swift */,
+				70BE6BD127984864001CE0F4 /* LoginViewController.swift */,
+				70BB370227E4E51D00ED27CA /* DeviceViewController.swift */,
+				70BCD28F27DF8FB80046C3DA /* NotificationViewController.swift */,
+				70BCD28D27DF84EF0046C3DA /* DashboardViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -297,6 +250,7 @@
 		70E3142127971BF1009D913C /* Zeno_sample_app */ = {
 			isa = PBXGroup;
 			children = (
+				702D933C27E8871300A04084 /* ViewModel */,
 				7068CD6527E3842700973829 /* UI */,
 				70BE6BD02798484C001CE0F4 /* Controller */,
 				7057993C27E1CCC900003347 /* Networking */,
@@ -441,11 +395,10 @@
 				70BCD28E27DF84EF0046C3DA /* DashboardViewController.swift in Sources */,
 				70194A9727E229DD00B118D7 /* PanelDeviceMO.swift in Sources */,
 				7068CD6927E386B600973829 /* PartializationView.swift in Sources */,
-				70BB370527E4E53400ED27CA /* DeviceViewModel.swift in Sources */,
+				70BB370527E4E53400ED27CA /* ZenoViewModel.swift in Sources */,
 				70194A8D27E1F63D00B118D7 /* GetPanelModeLoaderAdapter + Protocol.swift in Sources */,
 				70194A9B27E237FD00B118D7 /* EventMO.swift in Sources */,
 				7068CD6C27E38B8700973829 /* ZenoCell.swift in Sources */,
-				7010757F27E4DA080031BC00 /* NotificationViewModel.swift in Sources */,
 				7068CD6327E3367700973829 /* ZenoClient.swift in Sources */,
 				70E3142D27971BF1009D913C /* Zeno_sample_app.xcdatamodeld in Sources */,
 				70194A8227E1D50200B118D7 /* LoginLoaderAdapter + Protocol.swift in Sources */,
@@ -455,7 +408,6 @@
 				70E3142327971BF1009D913C /* AppDelegate.swift in Sources */,
 				70194A8F27E1FBAD00B118D7 /* PanelModeMO.swift in Sources */,
 				70E3142527971BF1009D913C /* SceneDelegate.swift in Sources */,
-				70BCD29227DF946E0046C3DA /* DashboardViewModel.swift in Sources */,
 				70BB370327E4E51D00ED27CA /* DeviceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

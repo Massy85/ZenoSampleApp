@@ -8,8 +8,21 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-    let loadingView = LoadingView()
     
+    // MARK: - Properties
+
+    let loadingView = LoadingView()
+    let viewModel = ZenoViewModel()
+    
+    // MARK: - Lifecycle
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addLoadingView()
+    }
+    
+    // MARK: - Methods
+
     func presentLogin(completion: @escaping () -> Void) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else { return }
@@ -33,7 +46,6 @@ class BaseViewController: UIViewController {
         
         self.present(controller, animated: true)
     }
-    
     
     func addLoadingView() {
         view.addSubview(loadingView)

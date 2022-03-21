@@ -63,7 +63,7 @@ class DeviceCell: UITableViewCell {
         areaLabel.text = "Area: \(device.area ?? "No data")"
         
         let statusOpen = device.statusOpen?.joined(separator: "-")
-        statusLabel.text = "Status open: \(statusOpen ?? "No data")"
+        statusOpenLabel.text = "Status open: \(statusOpen ?? "No data")"
         
         let statusFault = device.statusFault?.joined(separator: "-")
         statusFaultLabel.text = "Status fault: \(statusFault ?? "No data")"

@@ -1,28 +1,33 @@
 //
-//  DeviceViewController.swift
+//  NotificationViewController.swift
 //  Zeno_sample_app
 //
-//  Created by Massimiliano Bonafede on 18/03/22.
+//  Created by Massimiliano Bonafede on 14/03/22.
 //
 
 import UIKit
 
-class DeviceViewController: BaseViewController {
+class NotificationViewController: BaseViewController {
+
+    // MARK: - Outlets
 
     @IBOutlet weak var tableView: UITableView!
     
-    let viewModel = DeviceViewModel()
-    var container = [PanelDeviceDataMO]()
+    // MARK: - Properties
+
+    var container = [EventDataMO]()
     
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nib = UINib(nibName: "DeviceCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "DeviceCell")
+
+        let nib = UINib(nibName: "EventsCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "EventsCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        super.addLoadingView()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -30,46 +35,47 @@ class DeviceViewController: BaseViewController {
         
         viewModel.completionOnPresentLoginViewController = {
             super.presentLogin {
-                
-                self.viewModel.completionOnUpdateUI = { device in
+                self.viewModel.completionOnevents = { events in
                     DispatchQueue.main.async {
                         self.container.removeAll()
-                        self.container = device
+                        self.container = events
                         self.tableView.reloadData()
                         super.removeLoadingView()
                     }
                 }
                 
-                self.viewModel.getDeviceInfo()
+                self.viewModel.getEvents()
             }
         }
         
-        viewModel.completionOnUpdateUI = { device in
+        viewModel.completionOnevents = { events in
             DispatchQueue.main.async {
                 self.container.removeAll()
-                self.container = device
+                self.container = events
                 self.tableView.reloadData()
                 super.removeLoadingView()
             }
         }
         
         viewModel.checkForLogin()
-        viewModel.getDeviceInfo()
+        viewModel.getEvents()
     }
+
 }
 
-extension DeviceViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - UITableViewDelegate, UITableViewDataSource
+
+extension NotificationViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return container.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DeviceCell", for: indexPath) as? DeviceCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "EventsCell", for: indexPath) as? EventsCell else {
             return UITableViewCell()
         }
         
         cell.configureCell(container[indexPath.row])
-        
         return cell
     }
 }
