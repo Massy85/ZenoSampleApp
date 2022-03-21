@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DeviceViewController: UIViewController {
+class DeviceViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,6 +22,8 @@ class DeviceViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        super.addLoadingView()
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
@@ -41,6 +43,7 @@ class DeviceViewController: UIViewController {
                                 self.container.removeAll()
                                 self.container = device
                                 self.tableView.reloadData()
+                                super.removeLoadingView()
                             }
                         }
                         self.viewModel.getDeviceInfo()
@@ -63,6 +66,7 @@ class DeviceViewController: UIViewController {
                 self.container.removeAll()
                 self.container = device
                 self.tableView.reloadData()
+                super.removeLoadingView()
             }
         }
         

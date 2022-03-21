@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController {
+class DashboardViewController: BaseViewController {
 
     @IBOutlet weak var panelStateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -24,6 +24,9 @@ class DashboardViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        super.addLoadingView()
+        
         tableView.isScrollEnabled = false
         tableView.delegate = self
         tableView.dataSource = self
@@ -57,7 +60,7 @@ class DashboardViewController: UIViewController {
                                 self.panelStateLabel.text = text
                                 self.container = objects
                                 self.tableView.reloadData()
-                                
+                                super.removeLoadingView()
                             }
                         }
                         self.viewModel.getPanelMode()
@@ -93,14 +96,13 @@ class DashboardViewController: UIViewController {
                 self.panelStateLabel.text = text
                 self.container = objects
                 self.tableView.reloadData()
-                
+                super.removeLoadingView()
             }
         }
         
         viewModel.checkForLogin()
         viewModel.getPanelMode()
     }
-    
 }
 
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
@@ -137,5 +139,3 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.reloadData()
     }
 }
-
-

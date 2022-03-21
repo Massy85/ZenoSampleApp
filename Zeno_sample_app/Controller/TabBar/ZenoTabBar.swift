@@ -49,3 +49,41 @@ class ZenoTabBar: UITabBarController {
         return navController
     }
 }
+
+
+class LoadingView: UIView {
+    
+    let activityIndicator = UIActivityIndicatorView()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+    
+    deinit {
+        activityIndicator.stopAnimating()
+    }
+    
+    private func setup() {
+        backgroundColor = .white
+        
+        addSubview(activityIndicator)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        
+        activityIndicator.style = .large
+        activityIndicator.color = .orange
+        activityIndicator.startAnimating()
+    }
+    
+    func remove() {
+        activityIndicator.stopAnimating()
+        self.removeFromSuperview()
+    }
+}

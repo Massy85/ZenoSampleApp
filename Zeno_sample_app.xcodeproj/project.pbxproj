@@ -23,6 +23,7 @@
 		70194A9927E22A3B00B118D7 /* GetDeviceLoaderAdapter + Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A9827E22A3B00B118D7 /* GetDeviceLoaderAdapter + Protocol.swift */; };
 		70194A9B27E237FD00B118D7 /* EventMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A9A27E237FD00B118D7 /* EventMO.swift */; };
 		70194A9D27E238F900B118D7 /* GetEventsLoaderAdapter + Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A9C27E238F900B118D7 /* GetEventsLoaderAdapter + Protocol.swift */; };
+		702D933B27E873F900A04084 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702D933A27E873F900A04084 /* BaseViewController.swift */; };
 		7068CD5927E31AEC00973829 /* SETPanelModeTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7068CD5827E31AEC00973829 /* SETPanelModeTestAPI.swift */; };
 		7068CD5B27E31DA700973829 /* GETPanelDeviceTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7068CD5A27E31DA700973829 /* GETPanelDeviceTestAPI.swift */; };
 		7068CD5D27E3206400973829 /* GETEventsTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7068CD5C27E3206400973829 /* GETEventsTestAPI.swift */; };
@@ -36,7 +37,7 @@
 		70BB370527E4E53400ED27CA /* DeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BB370427E4E53400ED27CA /* DeviceViewModel.swift */; };
 		70BB370827E4E62C00ED27CA /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BB370627E4E62C00ED27CA /* DeviceCell.swift */; };
 		70BB370927E4E62C00ED27CA /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70BB370727E4E62C00ED27CA /* DeviceCell.xib */; };
-		70BCD28C27DF84570046C3DA /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCD28B27DF84570046C3DA /* NavigationController.swift */; };
+		70BCD28C27DF84570046C3DA /* ZenoTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCD28B27DF84570046C3DA /* ZenoTabBar.swift */; };
 		70BCD28E27DF84EF0046C3DA /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCD28D27DF84EF0046C3DA /* DashboardViewController.swift */; };
 		70BCD29027DF8FB80046C3DA /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCD28F27DF8FB80046C3DA /* NotificationViewController.swift */; };
 		70BCD29227DF946E0046C3DA /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCD29127DF946E0046C3DA /* DashboardViewModel.swift */; };
@@ -75,6 +76,7 @@
 		70194A9827E22A3B00B118D7 /* GetDeviceLoaderAdapter + Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetDeviceLoaderAdapter + Protocol.swift"; sourceTree = "<group>"; };
 		70194A9A27E237FD00B118D7 /* EventMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMO.swift; sourceTree = "<group>"; };
 		70194A9C27E238F900B118D7 /* GetEventsLoaderAdapter + Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetEventsLoaderAdapter + Protocol.swift"; sourceTree = "<group>"; };
+		702D933A27E873F900A04084 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7057993F27E1CD0B00003347 /* Client+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+Protocol.swift"; sourceTree = "<group>"; };
 		7068CD5827E31AEC00973829 /* SETPanelModeTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SETPanelModeTestAPI.swift; sourceTree = "<group>"; };
 		7068CD5A27E31DA700973829 /* GETPanelDeviceTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GETPanelDeviceTestAPI.swift; sourceTree = "<group>"; };
@@ -89,7 +91,7 @@
 		70BB370427E4E53400ED27CA /* DeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewModel.swift; sourceTree = "<group>"; };
 		70BB370627E4E62C00ED27CA /* DeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
 		70BB370727E4E62C00ED27CA /* DeviceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceCell.xib; sourceTree = "<group>"; };
-		70BCD28B27DF84570046C3DA /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		70BCD28B27DF84570046C3DA /* ZenoTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenoTabBar.swift; sourceTree = "<group>"; };
 		70BCD28D27DF84EF0046C3DA /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		70BCD28F27DF8FB80046C3DA /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		70BCD29127DF946E0046C3DA /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
@@ -154,6 +156,30 @@
 				70194A9A27E237FD00B118D7 /* EventMO.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		702D933727E86FDA00A04084 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				70BE6BD127984864001CE0F4 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		702D933827E86FEE00A04084 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				70BCD28B27DF84570046C3DA /* ZenoTabBar.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		702D933927E873CF00A04084 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				702D933A27E873F900A04084 /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
 			sourceTree = "<group>";
 		};
 		7057993C27E1CCC900003347 /* Networking */ = {
@@ -232,11 +258,12 @@
 		70BE6BD02798484C001CE0F4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				702D933927E873CF00A04084 /* BaseViewController */,
+				702D933827E86FEE00A04084 /* TabBar */,
+				702D933727E86FDA00A04084 /* Login */,
 				70BB370127E4E4FE00ED27CA /* Device */,
 				7010757D27E4D9F20031BC00 /* Notification */,
 				7068CD6427E33CA800973829 /* Dashboard */,
-				70BE6BD127984864001CE0F4 /* LoginViewController.swift */,
-				70BCD28B27DF84570046C3DA /* NavigationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -405,6 +432,7 @@
 				70BB370827E4E62C00ED27CA /* DeviceCell.swift in Sources */,
 				70194A9327E221B500B118D7 /* PanelModePostMO.swift in Sources */,
 				7010757B27E4D4590031BC00 /* EventsCell.swift in Sources */,
+				702D933B27E873F900A04084 /* BaseViewController.swift in Sources */,
 				70BE6BD227984864001CE0F4 /* LoginViewController.swift in Sources */,
 				7068CD6727E3844300973829 /* RoundButton.swift in Sources */,
 				70194A9927E22A3B00B118D7 /* GetDeviceLoaderAdapter + Protocol.swift in Sources */,
@@ -423,7 +451,7 @@
 				70194A8227E1D50200B118D7 /* LoginLoaderAdapter + Protocol.swift in Sources */,
 				70194A8B27E1F5FB00B118D7 /* LoginMO.swift in Sources */,
 				70BCD29027DF8FB80046C3DA /* NotificationViewController.swift in Sources */,
-				70BCD28C27DF84570046C3DA /* NavigationController.swift in Sources */,
+				70BCD28C27DF84570046C3DA /* ZenoTabBar.swift in Sources */,
 				70E3142327971BF1009D913C /* AppDelegate.swift in Sources */,
 				70194A8F27E1FBAD00B118D7 /* PanelModeMO.swift in Sources */,
 				70E3142527971BF1009D913C /* SceneDelegate.swift in Sources */,

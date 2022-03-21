@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NotificationViewController: UIViewController {
+class NotificationViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,6 +23,8 @@ class NotificationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        super.addLoadingView()
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
@@ -42,6 +44,7 @@ class NotificationViewController: UIViewController {
                                 self.container.removeAll()
                                 self.container = events
                                 self.tableView.reloadData()
+                                super.removeLoadingView()
                             }
                         }
                         self.viewModel.getEvents()
@@ -64,6 +67,7 @@ class NotificationViewController: UIViewController {
                 self.container.removeAll()
                 self.container = events
                 self.tableView.reloadData()
+                super.removeLoadingView()
             }
         }
         
