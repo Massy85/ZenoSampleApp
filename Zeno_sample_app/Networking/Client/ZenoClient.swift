@@ -7,6 +7,23 @@
 
 import Foundation
 
+public enum Polling {
+    case state
+    case events
+    case device
+    
+    var interval: Double {
+        switch self {
+        case .state:
+            return 1.0
+        case .events:
+            return 1.0
+        case .device:
+            return 3.0
+        }
+    }
+}
+
 public class ZenoClient {
     // MARK: - Properties
 
@@ -42,16 +59,7 @@ public class ZenoClient {
             loader = nil
         }
     }
-    
-    func startPolling() {
-        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(performPolling), userInfo: nil, repeats: true)
-        timer?.fire()
-    }
-    
-    @objc private func performPolling() {
-        getPanelMode()
-    }
-    
+
     public var completionOnGetPanelMode: ((GETPanelModeResult) -> Void)?
     
     private func getPanelMode() {
@@ -73,9 +81,6 @@ public class ZenoClient {
     public func setPanelModeAt(_ mode: ZenoState) {
         guard let token = token else { return }
         
-        timer?.invalidate()
-        timer = nil
-        
         print("---> [Zeno][Polling][Stopped]")
         print("---> [Zeno][SetPanelMode][\(mode.rawValue)]")
         
@@ -93,11 +98,8 @@ public class ZenoClient {
     
     public var completionOnPanelDevice: ((GETPanelDeviceResult) -> Void)?
     
-    public func getPanelDevice() {
+    private func getPanelDevice() {
         guard let token = token else { return }
-        
-        timer?.invalidate()
-        timer = nil
         
         print("---> [Zeno][Polling][Stopped]")
         print("---> [Zeno][GetPanelDevice]")
@@ -116,12 +118,9 @@ public class ZenoClient {
     
     public var completionOnEvents: ((GETEventsResult) -> Void)?
     
-    public func getEvents() {
+    private func getEvents() {
         guard let token = token else { return }
-        
-        timer?.invalidate()
-        timer = nil
-        
+
         print("---> [Zeno][Polling][Stopped]")
         print("---> [Zeno][GetEvents]")
         
@@ -139,7 +138,27 @@ public class ZenoClient {
     
     public func resumePolling() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.startPolling()
+            self.performPollingFor(self.polling)
+        }
+    }
+    
+    private var polling: Polling = .state
+    public func performPollingFor(_ polling: Polling) {
+        self.polling = polling
+        timer?.invalidate()
+        timer = nil
+        timer = Timer.scheduledTimer(timeInterval: polling.interval, target: self, selector: #selector(performPolling), userInfo: nil, repeats: true)
+        timer?.fire()
+    }
+    
+    @objc private func performPolling() {
+        switch polling {
+        case .state:
+            getPanelMode()
+        case .events:
+            getEvents()
+        case .device:
+            getPanelDevice()
         }
     }
 }

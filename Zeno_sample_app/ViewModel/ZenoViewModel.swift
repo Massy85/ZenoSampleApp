@@ -78,7 +78,7 @@ class ZenoViewModel {
             }
         }
         
-        client.startPolling()
+        client.performPollingFor(.state)
     }
     
     func totalArm() {
@@ -119,7 +119,7 @@ class ZenoViewModel {
             }
         }
         
-        client.getEvents()
+        client.performPollingFor(.events)
     }
     
     func getDeviceInfo() {
@@ -135,7 +135,7 @@ class ZenoViewModel {
             }
         }
         
-        client.getPanelDevice()
+        client.performPollingFor(.device)
     }
 }
 
