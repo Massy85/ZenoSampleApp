@@ -1,0 +1,737 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7010757B27E4D4590031BC00 /* EventsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7010757927E4D4590031BC00 /* EventsCell.swift */; };
+		7010757C27E4D4590031BC00 /* EventsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7010757A27E4D4590031BC00 /* EventsCell.xib */; };
+		7010757F27E4DA080031BC00 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7010757E27E4DA080031BC00 /* NotificationViewModel.swift */; };
+		70194A8227E1D50200B118D7 /* LoginLoaderAdapter + Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A8027E1D4CF00B118D7 /* LoginLoaderAdapter + Protocol.swift */; };
+		70194A8327E1D51200B118D7 /* Client+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7057993F27E1CD0B00003347 /* Client+Protocol.swift */; };
+		70194A8827E1DEE200B118D7 /* LoginTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A8727E1DEE200B118D7 /* LoginTestAPI.swift */; };
+		70194A8B27E1F5FB00B118D7 /* LoginMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A8A27E1F5FB00B118D7 /* LoginMO.swift */; };
+		70194A8D27E1F63D00B118D7 /* GetPanelModeLoaderAdapter + Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A8C27E1F63D00B118D7 /* GetPanelModeLoaderAdapter + Protocol.swift */; };
+		70194A8F27E1FBAD00B118D7 /* PanelModeMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A8E27E1FBAD00B118D7 /* PanelModeMO.swift */; };
+		70194A9127E1FC0D00B118D7 /* GETPanelModeTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A9027E1FC0D00B118D7 /* GETPanelModeTestAPI.swift */; };
+		70194A9327E221B500B118D7 /* PanelModePostMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A9227E221B500B118D7 /* PanelModePostMO.swift */; };
+		70194A9527E221F500B118D7 /* SetPanelModeLoadAdapter + Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A9427E221F500B118D7 /* SetPanelModeLoadAdapter + Protocol.swift */; };
+		70194A9727E229DD00B118D7 /* PanelDeviceMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A9627E229DD00B118D7 /* PanelDeviceMO.swift */; };
+		70194A9927E22A3B00B118D7 /* GetDeviceLoaderAdapter + Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A9827E22A3B00B118D7 /* GetDeviceLoaderAdapter + Protocol.swift */; };
+		70194A9B27E237FD00B118D7 /* EventMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A9A27E237FD00B118D7 /* EventMO.swift */; };
+		70194A9D27E238F900B118D7 /* GetEventsLoaderAdapter + Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A9C27E238F900B118D7 /* GetEventsLoaderAdapter + Protocol.swift */; };
+		7068CD5927E31AEC00973829 /* SETPanelModeTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7068CD5827E31AEC00973829 /* SETPanelModeTestAPI.swift */; };
+		7068CD5B27E31DA700973829 /* GETPanelDeviceTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7068CD5A27E31DA700973829 /* GETPanelDeviceTestAPI.swift */; };
+		7068CD5D27E3206400973829 /* GETEventsTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7068CD5C27E3206400973829 /* GETEventsTestAPI.swift */; };
+		7068CD6027E330DC00973829 /* URLRequestsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7068CD5F27E330DC00973829 /* URLRequestsParser.swift */; };
+		7068CD6327E3367700973829 /* ZenoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7068CD6227E3367700973829 /* ZenoClient.swift */; };
+		7068CD6727E3844300973829 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7068CD6627E3844300973829 /* RoundButton.swift */; };
+		7068CD6927E386B600973829 /* PartializationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7068CD6827E386B600973829 /* PartializationView.swift */; };
+		7068CD6C27E38B8700973829 /* ZenoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7068CD6A27E38B8700973829 /* ZenoCell.swift */; };
+		7068CD6D27E38B8700973829 /* ZenoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7068CD6B27E38B8700973829 /* ZenoCell.xib */; };
+		70BB370327E4E51D00ED27CA /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BB370227E4E51D00ED27CA /* DeviceViewController.swift */; };
+		70BB370527E4E53400ED27CA /* DeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BB370427E4E53400ED27CA /* DeviceViewModel.swift */; };
+		70BB370827E4E62C00ED27CA /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BB370627E4E62C00ED27CA /* DeviceCell.swift */; };
+		70BB370927E4E62C00ED27CA /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70BB370727E4E62C00ED27CA /* DeviceCell.xib */; };
+		70BCD28C27DF84570046C3DA /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCD28B27DF84570046C3DA /* NavigationController.swift */; };
+		70BCD28E27DF84EF0046C3DA /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCD28D27DF84EF0046C3DA /* DashboardViewController.swift */; };
+		70BCD29027DF8FB80046C3DA /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCD28F27DF8FB80046C3DA /* NotificationViewController.swift */; };
+		70BCD29227DF946E0046C3DA /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCD29127DF946E0046C3DA /* DashboardViewModel.swift */; };
+		70BE6BD227984864001CE0F4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BE6BD127984864001CE0F4 /* LoginViewController.swift */; };
+		70E3142327971BF1009D913C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E3142227971BF1009D913C /* AppDelegate.swift */; };
+		70E3142527971BF1009D913C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E3142427971BF1009D913C /* SceneDelegate.swift */; };
+		70E3142A27971BF1009D913C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E3142827971BF1009D913C /* Main.storyboard */; };
+		70E3142D27971BF1009D913C /* Zeno_sample_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70E3142B27971BF1009D913C /* Zeno_sample_app.xcdatamodeld */; };
+		70E3142F27971BF2009D913C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70E3142E27971BF2009D913C /* Assets.xcassets */; };
+		70E3143227971BF2009D913C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E3143027971BF2009D913C /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		70E3143927971BF3009D913C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70E3141727971BF1009D913C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70E3141E27971BF1009D913C;
+			remoteInfo = Zeno_sample_app;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7010757927E4D4590031BC00 /* EventsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCell.swift; sourceTree = "<group>"; };
+		7010757A27E4D4590031BC00 /* EventsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsCell.xib; sourceTree = "<group>"; };
+		7010757E27E4DA080031BC00 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		70194A8027E1D4CF00B118D7 /* LoginLoaderAdapter + Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginLoaderAdapter + Protocol.swift"; sourceTree = "<group>"; };
+		70194A8727E1DEE200B118D7 /* LoginTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestAPI.swift; sourceTree = "<group>"; };
+		70194A8A27E1F5FB00B118D7 /* LoginMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMO.swift; sourceTree = "<group>"; };
+		70194A8C27E1F63D00B118D7 /* GetPanelModeLoaderAdapter + Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetPanelModeLoaderAdapter + Protocol.swift"; sourceTree = "<group>"; };
+		70194A8E27E1FBAD00B118D7 /* PanelModeMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelModeMO.swift; sourceTree = "<group>"; };
+		70194A9027E1FC0D00B118D7 /* GETPanelModeTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GETPanelModeTestAPI.swift; sourceTree = "<group>"; };
+		70194A9227E221B500B118D7 /* PanelModePostMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelModePostMO.swift; sourceTree = "<group>"; };
+		70194A9427E221F500B118D7 /* SetPanelModeLoadAdapter + Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetPanelModeLoadAdapter + Protocol.swift"; sourceTree = "<group>"; };
+		70194A9627E229DD00B118D7 /* PanelDeviceMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelDeviceMO.swift; sourceTree = "<group>"; };
+		70194A9827E22A3B00B118D7 /* GetDeviceLoaderAdapter + Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetDeviceLoaderAdapter + Protocol.swift"; sourceTree = "<group>"; };
+		70194A9A27E237FD00B118D7 /* EventMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMO.swift; sourceTree = "<group>"; };
+		70194A9C27E238F900B118D7 /* GetEventsLoaderAdapter + Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetEventsLoaderAdapter + Protocol.swift"; sourceTree = "<group>"; };
+		7057993F27E1CD0B00003347 /* Client+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+Protocol.swift"; sourceTree = "<group>"; };
+		7068CD5827E31AEC00973829 /* SETPanelModeTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SETPanelModeTestAPI.swift; sourceTree = "<group>"; };
+		7068CD5A27E31DA700973829 /* GETPanelDeviceTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GETPanelDeviceTestAPI.swift; sourceTree = "<group>"; };
+		7068CD5C27E3206400973829 /* GETEventsTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GETEventsTestAPI.swift; sourceTree = "<group>"; };
+		7068CD5F27E330DC00973829 /* URLRequestsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestsParser.swift; sourceTree = "<group>"; };
+		7068CD6227E3367700973829 /* ZenoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenoClient.swift; sourceTree = "<group>"; };
+		7068CD6627E3844300973829 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		7068CD6827E386B600973829 /* PartializationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartializationView.swift; sourceTree = "<group>"; };
+		7068CD6A27E38B8700973829 /* ZenoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZenoCell.swift; sourceTree = "<group>"; };
+		7068CD6B27E38B8700973829 /* ZenoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZenoCell.xib; sourceTree = "<group>"; };
+		70BB370227E4E51D00ED27CA /* DeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
+		70BB370427E4E53400ED27CA /* DeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewModel.swift; sourceTree = "<group>"; };
+		70BB370627E4E62C00ED27CA /* DeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
+		70BB370727E4E62C00ED27CA /* DeviceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceCell.xib; sourceTree = "<group>"; };
+		70BCD28B27DF84570046C3DA /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		70BCD28D27DF84EF0046C3DA /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		70BCD28F27DF8FB80046C3DA /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		70BCD29127DF946E0046C3DA /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		70BE6BD127984864001CE0F4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		70E3141F27971BF1009D913C /* Zeno_sample_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zeno_sample_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		70E3142227971BF1009D913C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		70E3142427971BF1009D913C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		70E3142927971BF1009D913C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		70E3142C27971BF1009D913C /* Zeno_sample_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zeno_sample_app.xcdatamodel; sourceTree = "<group>"; };
+		70E3142E27971BF2009D913C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		70E3143127971BF2009D913C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		70E3143327971BF2009D913C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70E3143827971BF3009D913C /* Zeno_sample_appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Zeno_sample_appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70E3141C27971BF1009D913C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70E3143527971BF3009D913C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7010757D27E4D9F20031BC00 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				70BCD28F27DF8FB80046C3DA /* NotificationViewController.swift */,
+				7010757E27E4DA080031BC00 /* NotificationViewModel.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		70194A8427E1DE9E00B118D7 /* RealAPI */ = {
+			isa = PBXGroup;
+			children = (
+				70194A8727E1DEE200B118D7 /* LoginTestAPI.swift */,
+				70194A9027E1FC0D00B118D7 /* GETPanelModeTestAPI.swift */,
+				7068CD5827E31AEC00973829 /* SETPanelModeTestAPI.swift */,
+				7068CD5A27E31DA700973829 /* GETPanelDeviceTestAPI.swift */,
+				7068CD5C27E3206400973829 /* GETEventsTestAPI.swift */,
+			);
+			path = RealAPI;
+			sourceTree = "<group>";
+		};
+		70194A8927E1F5C500B118D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				70194A8A27E1F5FB00B118D7 /* LoginMO.swift */,
+				70194A8E27E1FBAD00B118D7 /* PanelModeMO.swift */,
+				70194A9227E221B500B118D7 /* PanelModePostMO.swift */,
+				70194A9627E229DD00B118D7 /* PanelDeviceMO.swift */,
+				70194A9A27E237FD00B118D7 /* EventMO.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7057993C27E1CCC900003347 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7068CD5E27E330BB00973829 /* URLRequests */,
+				70194A8927E1F5C500B118D7 /* Models */,
+				7057993E27E1CCE400003347 /* Loader */,
+				7057993D27E1CCDC00003347 /* Client */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7057993D27E1CCDC00003347 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				7057993F27E1CD0B00003347 /* Client+Protocol.swift */,
+				7068CD6227E3367700973829 /* ZenoClient.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		7057993E27E1CCE400003347 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				70194A8027E1D4CF00B118D7 /* LoginLoaderAdapter + Protocol.swift */,
+				70194A8C27E1F63D00B118D7 /* GetPanelModeLoaderAdapter + Protocol.swift */,
+				70194A9427E221F500B118D7 /* SetPanelModeLoadAdapter + Protocol.swift */,
+				70194A9827E22A3B00B118D7 /* GetDeviceLoaderAdapter + Protocol.swift */,
+				70194A9C27E238F900B118D7 /* GetEventsLoaderAdapter + Protocol.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		7068CD5E27E330BB00973829 /* URLRequests */ = {
+			isa = PBXGroup;
+			children = (
+				7068CD5F27E330DC00973829 /* URLRequestsParser.swift */,
+			);
+			path = URLRequests;
+			sourceTree = "<group>";
+		};
+		7068CD6427E33CA800973829 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				70BCD28D27DF84EF0046C3DA /* DashboardViewController.swift */,
+				70BCD29127DF946E0046C3DA /* DashboardViewModel.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		7068CD6527E3842700973829 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7068CD6627E3844300973829 /* RoundButton.swift */,
+				7068CD6827E386B600973829 /* PartializationView.swift */,
+				7068CD6A27E38B8700973829 /* ZenoCell.swift */,
+				7068CD6B27E38B8700973829 /* ZenoCell.xib */,
+				7010757927E4D4590031BC00 /* EventsCell.swift */,
+				7010757A27E4D4590031BC00 /* EventsCell.xib */,
+				70BB370627E4E62C00ED27CA /* DeviceCell.swift */,
+				70BB370727E4E62C00ED27CA /* DeviceCell.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		70BB370127E4E4FE00ED27CA /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				70BB370227E4E51D00ED27CA /* DeviceViewController.swift */,
+				70BB370427E4E53400ED27CA /* DeviceViewModel.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		70BE6BD02798484C001CE0F4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				70BB370127E4E4FE00ED27CA /* Device */,
+				7010757D27E4D9F20031BC00 /* Notification */,
+				7068CD6427E33CA800973829 /* Dashboard */,
+				70BE6BD127984864001CE0F4 /* LoginViewController.swift */,
+				70BCD28B27DF84570046C3DA /* NavigationController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		70D27A3B27B26A24004AF436 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		70E3141627971BF1009D913C = {
+			isa = PBXGroup;
+			children = (
+				70E3142127971BF1009D913C /* Zeno_sample_app */,
+				70E3143B27971BF3009D913C /* Zeno_sample_appTests */,
+				70E3142027971BF1009D913C /* Products */,
+				70D27A3B27B26A24004AF436 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		70E3142027971BF1009D913C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70E3141F27971BF1009D913C /* Zeno_sample_app.app */,
+				70E3143827971BF3009D913C /* Zeno_sample_appTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70E3142127971BF1009D913C /* Zeno_sample_app */ = {
+			isa = PBXGroup;
+			children = (
+				7068CD6527E3842700973829 /* UI */,
+				70BE6BD02798484C001CE0F4 /* Controller */,
+				7057993C27E1CCC900003347 /* Networking */,
+				70E3142227971BF1009D913C /* AppDelegate.swift */,
+				70E3142427971BF1009D913C /* SceneDelegate.swift */,
+				70E3142827971BF1009D913C /* Main.storyboard */,
+				70E3142E27971BF2009D913C /* Assets.xcassets */,
+				70E3143027971BF2009D913C /* LaunchScreen.storyboard */,
+				70E3143327971BF2009D913C /* Info.plist */,
+				70E3142B27971BF1009D913C /* Zeno_sample_app.xcdatamodeld */,
+			);
+			path = Zeno_sample_app;
+			sourceTree = "<group>";
+		};
+		70E3143B27971BF3009D913C /* Zeno_sample_appTests */ = {
+			isa = PBXGroup;
+			children = (
+				70194A8427E1DE9E00B118D7 /* RealAPI */,
+			);
+			path = Zeno_sample_appTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70E3141E27971BF1009D913C /* Zeno_sample_app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70E3144C27971BF3009D913C /* Build configuration list for PBXNativeTarget "Zeno_sample_app" */;
+			buildPhases = (
+				70E3141B27971BF1009D913C /* Sources */,
+				70E3141C27971BF1009D913C /* Frameworks */,
+				70E3141D27971BF1009D913C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Zeno_sample_app;
+			packageProductDependencies = (
+			);
+			productName = Zeno_sample_app;
+			productReference = 70E3141F27971BF1009D913C /* Zeno_sample_app.app */;
+			productType = "com.apple.product-type.application";
+		};
+		70E3143727971BF3009D913C /* Zeno_sample_appTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70E3144F27971BF3009D913C /* Build configuration list for PBXNativeTarget "Zeno_sample_appTests" */;
+			buildPhases = (
+				70E3143427971BF3009D913C /* Sources */,
+				70E3143527971BF3009D913C /* Frameworks */,
+				70E3143627971BF3009D913C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70E3143A27971BF3009D913C /* PBXTargetDependency */,
+			);
+			name = Zeno_sample_appTests;
+			productName = Zeno_sample_appTests;
+			productReference = 70E3143827971BF3009D913C /* Zeno_sample_appTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70E3141727971BF1009D913C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					70E3141E27971BF1009D913C = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					70E3143727971BF3009D913C = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 70E3141E27971BF1009D913C;
+					};
+				};
+			};
+			buildConfigurationList = 70E3141A27971BF1009D913C /* Build configuration list for PBXProject "Zeno_sample_app" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 70E3141627971BF1009D913C;
+			packageReferences = (
+			);
+			productRefGroup = 70E3142027971BF1009D913C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70E3141E27971BF1009D913C /* Zeno_sample_app */,
+				70E3143727971BF3009D913C /* Zeno_sample_appTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70E3141D27971BF1009D913C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7010757C27E4D4590031BC00 /* EventsCell.xib in Resources */,
+				70E3143227971BF2009D913C /* LaunchScreen.storyboard in Resources */,
+				7068CD6D27E38B8700973829 /* ZenoCell.xib in Resources */,
+				70E3142F27971BF2009D913C /* Assets.xcassets in Resources */,
+				70E3142A27971BF1009D913C /* Main.storyboard in Resources */,
+				70BB370927E4E62C00ED27CA /* DeviceCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70E3143627971BF3009D913C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70E3141B27971BF1009D913C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70194A8327E1D51200B118D7 /* Client+Protocol.swift in Sources */,
+				70194A9D27E238F900B118D7 /* GetEventsLoaderAdapter + Protocol.swift in Sources */,
+				70BB370827E4E62C00ED27CA /* DeviceCell.swift in Sources */,
+				70194A9327E221B500B118D7 /* PanelModePostMO.swift in Sources */,
+				7010757B27E4D4590031BC00 /* EventsCell.swift in Sources */,
+				70BE6BD227984864001CE0F4 /* LoginViewController.swift in Sources */,
+				7068CD6727E3844300973829 /* RoundButton.swift in Sources */,
+				70194A9927E22A3B00B118D7 /* GetDeviceLoaderAdapter + Protocol.swift in Sources */,
+				70194A9527E221F500B118D7 /* SetPanelModeLoadAdapter + Protocol.swift in Sources */,
+				7068CD6027E330DC00973829 /* URLRequestsParser.swift in Sources */,
+				70BCD28E27DF84EF0046C3DA /* DashboardViewController.swift in Sources */,
+				70194A9727E229DD00B118D7 /* PanelDeviceMO.swift in Sources */,
+				7068CD6927E386B600973829 /* PartializationView.swift in Sources */,
+				70BB370527E4E53400ED27CA /* DeviceViewModel.swift in Sources */,
+				70194A8D27E1F63D00B118D7 /* GetPanelModeLoaderAdapter + Protocol.swift in Sources */,
+				70194A9B27E237FD00B118D7 /* EventMO.swift in Sources */,
+				7068CD6C27E38B8700973829 /* ZenoCell.swift in Sources */,
+				7010757F27E4DA080031BC00 /* NotificationViewModel.swift in Sources */,
+				7068CD6327E3367700973829 /* ZenoClient.swift in Sources */,
+				70E3142D27971BF1009D913C /* Zeno_sample_app.xcdatamodeld in Sources */,
+				70194A8227E1D50200B118D7 /* LoginLoaderAdapter + Protocol.swift in Sources */,
+				70194A8B27E1F5FB00B118D7 /* LoginMO.swift in Sources */,
+				70BCD29027DF8FB80046C3DA /* NotificationViewController.swift in Sources */,
+				70BCD28C27DF84570046C3DA /* NavigationController.swift in Sources */,
+				70E3142327971BF1009D913C /* AppDelegate.swift in Sources */,
+				70194A8F27E1FBAD00B118D7 /* PanelModeMO.swift in Sources */,
+				70E3142527971BF1009D913C /* SceneDelegate.swift in Sources */,
+				70BCD29227DF946E0046C3DA /* DashboardViewModel.swift in Sources */,
+				70BB370327E4E51D00ED27CA /* DeviceViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70E3143427971BF3009D913C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7068CD5D27E3206400973829 /* GETEventsTestAPI.swift in Sources */,
+				7068CD5B27E31DA700973829 /* GETPanelDeviceTestAPI.swift in Sources */,
+				70194A8827E1DEE200B118D7 /* LoginTestAPI.swift in Sources */,
+				70194A9127E1FC0D00B118D7 /* GETPanelModeTestAPI.swift in Sources */,
+				7068CD5927E31AEC00973829 /* SETPanelModeTestAPI.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		70E3143A27971BF3009D913C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70E3141E27971BF1009D913C /* Zeno_sample_app */;
+			targetProxy = 70E3143927971BF3009D913C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		70E3142827971BF1009D913C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70E3142927971BF1009D913C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		70E3143027971BF2009D913C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70E3143127971BF2009D913C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		70E3144A27971BF3009D913C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		70E3144B27971BF3009D913C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		70E3144D27971BF3009D913C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H7TERFXEST;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Zeno_sample_app/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.UrmetSecure.Zeno-sample-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		70E3144E27971BF3009D913C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H7TERFXEST;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Zeno_sample_app/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.UrmetSecure.Zeno-sample-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		70E3145027971BF3009D913C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H7TERFXEST;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.UrmetSecure.Zeno-sample-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zeno_sample_app.app/Zeno_sample_app";
+			};
+			name = Debug;
+		};
+		70E3145127971BF3009D913C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H7TERFXEST;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.UrmetSecure.Zeno-sample-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zeno_sample_app.app/Zeno_sample_app";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70E3141A27971BF1009D913C /* Build configuration list for PBXProject "Zeno_sample_app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70E3144A27971BF3009D913C /* Debug */,
+				70E3144B27971BF3009D913C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70E3144C27971BF3009D913C /* Build configuration list for PBXNativeTarget "Zeno_sample_app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70E3144D27971BF3009D913C /* Debug */,
+				70E3144E27971BF3009D913C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70E3144F27971BF3009D913C /* Build configuration list for PBXNativeTarget "Zeno_sample_appTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70E3145027971BF3009D913C /* Debug */,
+				70E3145127971BF3009D913C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		70E3142B27971BF1009D913C /* Zeno_sample_app.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				70E3142C27971BF1009D913C /* Zeno_sample_app.xcdatamodel */,
+			);
+			currentVersion = 70E3142C27971BF1009D913C /* Zeno_sample_app.xcdatamodel */;
+			path = Zeno_sample_app.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 70E3141727971BF1009D913C /* Project object */;
+}
