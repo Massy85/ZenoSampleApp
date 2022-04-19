@@ -9,8 +9,15 @@ import XCTest
 @testable import Zeno_sample_app
 
 class LoginTestAPI: XCTestCase {
-    let username: String = "bnfmsm"
-    let password: String = "zeno1234"
+    let credentilas: Credentials = .zenoProMassimiliano
+    
+    var username: String {
+        credentilas.credentials.username
+    }
+    
+    var password: String {
+        credentilas.credentials.password
+    }
     
     func test_real_loginAPI() {
         let exp = expectation(description: "waiting for completion")
@@ -35,32 +42,31 @@ class LoginTestAPI: XCTestCase {
         XCTAssertNotNil(sutLoginMO)
         XCTAssertNil(sutErrorLogin)
     }
+    
+    // MARK: - Helper
 
-}
-
-
-fileprivate class LoginSPY {
-    
-    let loginLoadAdapter: LoginLoaderAdapter
-    var completion: ((Resul) -> Void)?
-    
-    enum Resul {
-        case success(_ loginMO: LoginMO)
-        case failure(_ error: Error)
-    }
-    
-    init(username: String, password: String) {
-        loginLoadAdapter = LoginLoaderAdapter(username: username, password: password, client: Client())
-    }
-    
-    func perform() {
-        loginLoadAdapter.load { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let loginMO):
-                self.completion?(.success(loginMO))
-            case .failure(let error):
-                self.completion?(.failure(error))
+    private class LoginSPY {
+        let loginLoadAdapter: LoginLoaderAdapter
+        var completion: ((Resul) -> Void)?
+        
+        enum Resul {
+            case success(_ loginMO: LoginMO)
+            case failure(_ error: Error)
+        }
+        
+        init(username: String, password: String) {
+            loginLoadAdapter = LoginLoaderAdapter(username: username, password: password, client: Client())
+        }
+        
+        func perform() {
+            loginLoadAdapter.load { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let loginMO):
+                    self.completion?(.success(loginMO))
+                case .failure(let error):
+                    self.completion?(.failure(error))
+                }
             }
         }
     }

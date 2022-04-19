@@ -1,14 +1,14 @@
 //
-//  GETPanelModeTestAPI.swift
+//  GETFaultDashboardTestAPI.swift
 //  Zeno_sample_appTests
 //
-//  Created by Massimiliano Bonafede on 16/03/22.
+//  Created by Massimiliano Bonafede on 08/04/22.
 //
 
 import XCTest
 @testable import Zeno_sample_app
 
-class GETPanelModeTestAPI: XCTestCase {
+class GETFaultDashboardTestAPI: XCTestCase {
     let credentilas: Credentials = .zenoProMassimiliano
     
     var username: String {
@@ -19,17 +19,17 @@ class GETPanelModeTestAPI: XCTestCase {
         credentilas.credentials.password
     }
     
-    func test_real_panelModeAPI() {
+    func test_real_faultDashboardAPI() {
         let exp = expectation(description: "waiting for completion")
-        var sutPanelModeMO: PanelModeMO? = nil
+        var sutDashboardMO: DashboardMO? = nil
         var sutError: Error? = nil
         
-        let sut = PanelModeSPY(username: username, password: password)
+        let sut = FaultSPY(username: username, password: password)
         
         sut.completion = { result in
             switch result {
-            case .success(let panelModeMO):
-                sutPanelModeMO = panelModeMO
+            case .success(let dashboardMO):
+                sutDashboardMO = dashboardMO
             case .failure(let error):
                 sutError = error
             }
@@ -39,18 +39,18 @@ class GETPanelModeTestAPI: XCTestCase {
         sut.perform()
         
         wait(for: [exp], timeout: 10)
-        XCTAssertNotNil(sutPanelModeMO)
+        XCTAssertNotNil(sutDashboardMO)
         XCTAssertNil(sutError)
     }
     
     // MARK: - Helper
-
-    private class PanelModeSPY {
+    
+    private class FaultSPY {
         let loginLoadAdapter: LoginLoaderAdapter
         var completion: ((Resul) -> Void)?
         
         enum Resul {
-            case success(_ panelModeMO: PanelModeMO)
+            case success(_ dashboardMO: DashboardMO)
             case failure(_ error: Error)
         }
         
@@ -63,11 +63,11 @@ class GETPanelModeTestAPI: XCTestCase {
                 guard let self = self else { return }
                 switch result {
                 case .success(let loginMO):
-                    let panelModeLoaderAdapter = GetPanelModeLoaderAdapter(loginMO.token, client: Client())
-                    panelModeLoaderAdapter.load { result in
+                    let faultDashboardAdapter = GetFaultDashboardAdapter(token: loginMO.token, client: Client())
+                    faultDashboardAdapter.load { result in
                         switch result {
-                        case .success(let panelModeMO):
-                            self.completion?(.success(panelModeMO))
+                        case .success(let dashboardMO):
+                            self.completion?(.success(dashboardMO))
                         case .failure(let error):
                             self.completion?(.failure(error))
                         }

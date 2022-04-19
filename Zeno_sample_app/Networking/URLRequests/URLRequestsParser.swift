@@ -102,4 +102,20 @@ internal class URLRequestsParser {
         request.url = urlComponents?.url
         return request
     }
+    
+    static func getFaultDashboard(_ token: String) -> URLRequest? {
+        guard let url = URL(string: "https://www.cloud.urmet.com/tool/zenoapi/REST/v2/fault/dashboard") else { return nil }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(token, forHTTPHeaderField: "token")
+        
+        //        var urlComponents = URLComponents(string: url.absoluteString)
+        //        var queries: [URLQueryItem] = []
+        //        queries.append(URLQueryItem(name: "mac", value: mac))
+        //        urlComponents?.queryItems = queries
+        //        request.url = urlComponents?.url
+        
+        return request
+    }
 }

@@ -21,6 +21,16 @@ class Client: HTTPClient {
             }
             
             if let data = data, let response = response as? HTTPURLResponse {
+                
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [String:Any]
+                    let theJSONData = try JSONSerialization.data(withJSONObject: json!, options: .prettyPrinted)
+                    let theJSONText = String(data: theJSONData, encoding: .ascii)
+                    print("JSON string = \(theJSONText!)")
+                } catch {
+                    print("Error on decoding: \(error)")
+                }
+                
                 let result = (data, response)
                 completion(.success(result))
             }

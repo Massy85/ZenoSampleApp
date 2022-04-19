@@ -9,9 +9,16 @@ import XCTest
 @testable import Zeno_sample_app
 
 class GETPanelDeviceTestAPI: XCTestCase {
-    let username: String = "bnfmsm"
-    let password: String = "zeno1234"
- 
+    let credentilas: Credentials = .zenoProMassimiliano
+    
+    var username: String {
+        credentilas.credentials.username
+    }
+    
+    var password: String {
+        credentilas.credentials.password
+    }
+    
     func test_get_panelDeviceAPI() {
         let exp = expectation(description: "waiting for completion")
         var sutPanelDeviceMO: PanelDeviceMO? = nil
@@ -35,37 +42,38 @@ class GETPanelDeviceTestAPI: XCTestCase {
         XCTAssertNotNil(sutPanelDeviceMO)
         XCTAssertNil(sutError)
     }
-}
+    
+    // MARK: - Helper
 
-
-fileprivate class PanelDeviceSPY {
-    let loginLoadAdapter: LoginLoaderAdapter
-    var completion: ((Resul) -> Void)?
-    
-    enum Resul {
-        case success(_ panelDeviceMO: PanelDeviceMO)
-        case failure(_ error: Error)
-    }
-    
-    init(username: String, password: String) {
-        loginLoadAdapter = LoginLoaderAdapter(username: username, password: password, client: Client())
-    }
-    
-    func perform() {
-        loginLoadAdapter.load { result in
-            switch result {
-            case.success(let loginMO):
-                let panelDeviceLoader = GetPanelDeviceLoaderAdapter(loginMO.token, Client())
-                panelDeviceLoader.load { result in
-                    switch result {
-                    case .success(let panelDeviceMO):
-                        self.completion?(.success(panelDeviceMO))
-                    case .failure(let error):
-                        self.completion?(.failure(error))
+    private class PanelDeviceSPY {
+        let loginLoadAdapter: LoginLoaderAdapter
+        var completion: ((Resul) -> Void)?
+        
+        enum Resul {
+            case success(_ panelDeviceMO: PanelDeviceMO)
+            case failure(_ error: Error)
+        }
+        
+        init(username: String, password: String) {
+            loginLoadAdapter = LoginLoaderAdapter(username: username, password: password, client: Client())
+        }
+        
+        func perform() {
+            loginLoadAdapter.load { result in
+                switch result {
+                case.success(let loginMO):
+                    let panelDeviceLoader = GetPanelDeviceLoaderAdapter(loginMO.token, Client())
+                    panelDeviceLoader.load { result in
+                        switch result {
+                        case .success(let panelDeviceMO):
+                            self.completion?(.success(panelDeviceMO))
+                        case .failure(let error):
+                            self.completion?(.failure(error))
+                        }
                     }
+                case .failure(let error):
+                    self.completion?(.failure(error))
                 }
-            case .failure(let error):
-                self.completion?(.failure(error))
             }
         }
     }

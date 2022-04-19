@@ -158,19 +158,20 @@ fileprivate class GetDeviceMapper {
         
         init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
-            self.address = try container.decode(String.self, forKey: .address)
-            self.group = try container.decode(String.self, forKey: .group)
-            self.status = try container.decode(String.self, forKey: .status)
-            self.id = try container.decode(String.self, forKey: .id)
-            self.typeNo = try container.decode(String.self, forKey: .typeNo)
-            self.bypass = try container.decode(String.self, forKey: .bypass)
-            self.rssi = try container.decode(String.self, forKey: .rssi)
-            self.deviceCategory = try container.decode(String.self, forKey: .deviceCategory)
-            self.attr = try container.decode(String.self, forKey: .attr)
-            self.type = try container.decode(String.self, forKey: .type)
-            self.area = try container.decode(String.self, forKey: .area)
-            self.statusOpen = try container.decode([String].self, forKey: .statusOpen)
-            self.statusFault = try container.decode([String].self, forKey: .statusFault)
+            self.address = try container.decodeIfPresent(String.self, forKey: .address)
+            //self.address = try container.decode(String.self, forKey: .address)
+            self.group = try container.decodeIfPresent(String.self, forKey: .group)
+            self.status = try container.decodeIfPresent(String.self, forKey: .status)
+            self.id = try container.decodeIfPresent(String.self, forKey: .id)
+            self.typeNo = try container.decodeIfPresent(String.self, forKey: .typeNo)
+            self.bypass = try container.decodeIfPresent(String.self, forKey: .bypass)
+            self.rssi = try container.decodeIfPresent(String.self, forKey: .rssi)
+            self.deviceCategory = try container.decodeIfPresent(String.self, forKey: .deviceCategory)
+            self.attr = try container.decodeIfPresent(String.self, forKey: .attr)
+            self.type = try container.decodeIfPresent(String.self, forKey: .type)
+            self.area = try container.decodeIfPresent(String.self, forKey: .area)
+            self.statusOpen = try container.decodeIfPresent([String].self, forKey: .statusOpen)
+            self.statusFault = try container.decodeIfPresent([String].self, forKey: .statusFault)
         }
     }
     

@@ -23,6 +23,10 @@
 		70194A9B27E237FD00B118D7 /* EventMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A9A27E237FD00B118D7 /* EventMO.swift */; };
 		70194A9D27E238F900B118D7 /* GetEventsLoaderAdapter + Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70194A9C27E238F900B118D7 /* GetEventsLoaderAdapter + Protocol.swift */; };
 		702D933B27E873F900A04084 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702D933A27E873F900A04084 /* BaseViewController.swift */; };
+		704297A3280EB02C0006BAEB /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704297A2280EB02C0006BAEB /* Credentials.swift */; };
+		704297A5280EB7140006BAEB /* DashboardMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704297A4280EB7140006BAEB /* DashboardMO.swift */; };
+		7049D319280066B500905DF6 /* GETFaultDashboardTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7049D318280066B500905DF6 /* GETFaultDashboardTestAPI.swift */; };
+		7049D31B280067A100905DF6 /* GetFaultDashboardAdapter + Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7049D31A280067A100905DF6 /* GetFaultDashboardAdapter + Protocol.swift */; };
 		7068CD5927E31AEC00973829 /* SETPanelModeTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7068CD5827E31AEC00973829 /* SETPanelModeTestAPI.swift */; };
 		7068CD5B27E31DA700973829 /* GETPanelDeviceTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7068CD5A27E31DA700973829 /* GETPanelDeviceTestAPI.swift */; };
 		7068CD5D27E3206400973829 /* GETEventsTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7068CD5C27E3206400973829 /* GETEventsTestAPI.swift */; };
@@ -74,6 +78,10 @@
 		70194A9A27E237FD00B118D7 /* EventMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMO.swift; sourceTree = "<group>"; };
 		70194A9C27E238F900B118D7 /* GetEventsLoaderAdapter + Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetEventsLoaderAdapter + Protocol.swift"; sourceTree = "<group>"; };
 		702D933A27E873F900A04084 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		704297A2280EB02C0006BAEB /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		704297A4280EB7140006BAEB /* DashboardMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardMO.swift; sourceTree = "<group>"; };
+		7049D318280066B500905DF6 /* GETFaultDashboardTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GETFaultDashboardTestAPI.swift; sourceTree = "<group>"; };
+		7049D31A280067A100905DF6 /* GetFaultDashboardAdapter + Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetFaultDashboardAdapter + Protocol.swift"; sourceTree = "<group>"; };
 		7057993F27E1CD0B00003347 /* Client+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+Protocol.swift"; sourceTree = "<group>"; };
 		7068CD5827E31AEC00973829 /* SETPanelModeTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SETPanelModeTestAPI.swift; sourceTree = "<group>"; };
 		7068CD5A27E31DA700973829 /* GETPanelDeviceTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GETPanelDeviceTestAPI.swift; sourceTree = "<group>"; };
@@ -129,6 +137,7 @@
 				7068CD5827E31AEC00973829 /* SETPanelModeTestAPI.swift */,
 				7068CD5A27E31DA700973829 /* GETPanelDeviceTestAPI.swift */,
 				7068CD5C27E3206400973829 /* GETEventsTestAPI.swift */,
+				7049D318280066B500905DF6 /* GETFaultDashboardTestAPI.swift */,
 			);
 			path = RealAPI;
 			sourceTree = "<group>";
@@ -141,6 +150,7 @@
 				70194A9227E221B500B118D7 /* PanelModePostMO.swift */,
 				70194A9627E229DD00B118D7 /* PanelDeviceMO.swift */,
 				70194A9A27E237FD00B118D7 /* EventMO.swift */,
+				704297A4280EB7140006BAEB /* DashboardMO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -153,9 +163,18 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		704297A1280EB00C0006BAEB /* Access */ = {
+			isa = PBXGroup;
+			children = (
+				704297A2280EB02C0006BAEB /* Credentials.swift */,
+			);
+			path = Access;
+			sourceTree = "<group>";
+		};
 		7057993C27E1CCC900003347 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				704297A1280EB00C0006BAEB /* Access */,
 				7068CD5E27E330BB00973829 /* URLRequests */,
 				70194A8927E1F5C500B118D7 /* Models */,
 				7057993E27E1CCE400003347 /* Loader */,
@@ -181,6 +200,7 @@
 				70194A9427E221F500B118D7 /* SetPanelModeLoadAdapter + Protocol.swift */,
 				70194A9827E22A3B00B118D7 /* GetDeviceLoaderAdapter + Protocol.swift */,
 				70194A9C27E238F900B118D7 /* GetEventsLoaderAdapter + Protocol.swift */,
+				7049D31A280067A100905DF6 /* GetFaultDashboardAdapter + Protocol.swift */,
 			);
 			path = Loader;
 			sourceTree = "<group>";
@@ -388,10 +408,12 @@
 				7010757B27E4D4590031BC00 /* EventsCell.swift in Sources */,
 				702D933B27E873F900A04084 /* BaseViewController.swift in Sources */,
 				70BE6BD227984864001CE0F4 /* LoginViewController.swift in Sources */,
+				7049D31B280067A100905DF6 /* GetFaultDashboardAdapter + Protocol.swift in Sources */,
 				7068CD6727E3844300973829 /* RoundButton.swift in Sources */,
 				70194A9927E22A3B00B118D7 /* GetDeviceLoaderAdapter + Protocol.swift in Sources */,
 				70194A9527E221F500B118D7 /* SetPanelModeLoadAdapter + Protocol.swift in Sources */,
 				7068CD6027E330DC00973829 /* URLRequestsParser.swift in Sources */,
+				704297A3280EB02C0006BAEB /* Credentials.swift in Sources */,
 				70BCD28E27DF84EF0046C3DA /* DashboardViewController.swift in Sources */,
 				70194A9727E229DD00B118D7 /* PanelDeviceMO.swift in Sources */,
 				7068CD6927E386B600973829 /* PartializationView.swift in Sources */,
@@ -403,6 +425,7 @@
 				70E3142D27971BF1009D913C /* Zeno_sample_app.xcdatamodeld in Sources */,
 				70194A8227E1D50200B118D7 /* LoginLoaderAdapter + Protocol.swift in Sources */,
 				70194A8B27E1F5FB00B118D7 /* LoginMO.swift in Sources */,
+				704297A5280EB7140006BAEB /* DashboardMO.swift in Sources */,
 				70BCD29027DF8FB80046C3DA /* NotificationViewController.swift in Sources */,
 				70BCD28C27DF84570046C3DA /* ZenoTabBar.swift in Sources */,
 				70E3142327971BF1009D913C /* AppDelegate.swift in Sources */,
@@ -419,6 +442,7 @@
 				7068CD5D27E3206400973829 /* GETEventsTestAPI.swift in Sources */,
 				7068CD5B27E31DA700973829 /* GETPanelDeviceTestAPI.swift in Sources */,
 				70194A8827E1DEE200B118D7 /* LoginTestAPI.swift in Sources */,
+				7049D319280066B500905DF6 /* GETFaultDashboardTestAPI.swift in Sources */,
 				70194A9127E1FC0D00B118D7 /* GETPanelModeTestAPI.swift in Sources */,
 				7068CD5927E31AEC00973829 /* SETPanelModeTestAPI.swift in Sources */,
 			);
