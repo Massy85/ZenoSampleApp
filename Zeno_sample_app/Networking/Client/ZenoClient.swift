@@ -28,7 +28,7 @@ public class ZenoClient {
     // MARK: - Properties
 
     public static let shared = ZenoClient()
-    
+    public static let nullValue = "Not value"
     public typealias LoginResult = Result<LoginMO,Error>
     public typealias GETPanelModeResult = Result<PanelModeMO,Error>
     public typealias SETPanelModeResult = Result<PanelModePostMO,Error>

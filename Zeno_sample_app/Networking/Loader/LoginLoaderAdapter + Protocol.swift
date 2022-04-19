@@ -71,7 +71,7 @@ fileprivate class LoginMapper {
         let message: String
         let token: String
         let panelCode: String
-        let data: RootData?
+        let data: RootData
         
         var item: LoginMO {
             return LoginMO(
@@ -80,8 +80,8 @@ fileprivate class LoginMapper {
                 message: message,
                 token: token,
                 panelCode: panelCode,
-                mac: data?.mac,
-                id: data?.id
+                mac: data.mac,
+                id: data.id
             )
         }
         
@@ -102,13 +102,12 @@ fileprivate class LoginMapper {
             self.token = try container.decode(String.self, forKey: .token)
             self.panelCode = try container.decode(String.self, forKey: .panelCode)
             
-            if let _  = try? container.decodeIfPresent(String.self, forKey: .data) {
-                self.data = nil
-            } else {
+            if result {
                 self.data = try container.decode(RootData.self, forKey: .data)
+            } else {
+                self.data = RootData()
             }
         }
-        
     }
     
     // MARK: - RootData
@@ -116,6 +115,32 @@ fileprivate class LoginMapper {
     private struct RootData: Decodable {
         let mac: String
         let id: String
+        
+        init() {
+            self.mac = ZenoClient.nullValue
+            self.id = ZenoClient.nullValue
+        }
+        
+        private enum CodingKeys: String, CodingKey {
+            case mac
+            case id
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            
+            if let mac = try container.decodeIfPresent(String.self, forKey: .mac) {
+                self.mac = mac
+            } else {
+                self.mac = ""
+            }
+            
+            if let id = try container.decodeIfPresent(String.self, forKey: .id) {
+                self.id = id
+            } else {
+                self.id = ""
+            }
+        }
     }
     
     // MARK: - Properties
