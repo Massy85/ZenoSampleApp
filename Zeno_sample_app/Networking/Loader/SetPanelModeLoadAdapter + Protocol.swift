@@ -79,7 +79,7 @@ extension SetPanelModeLoaderAdapter: SetPanelModeLoader {
     }
 }
 
-private class PostPanelModeMapper {
+internal class PostPanelModeMapper {
     // MARK: - Lifecycle
     
     private init() {}
@@ -149,6 +149,25 @@ private class PostPanelModeMapper {
                 zone: zone,
                 name: name
             )
+        }
+        
+        private enum CodingKeys: String, CodingKey {
+            case type
+            case type_no
+            case area
+            case fault
+            case zone
+            case name
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            self.type = try container.decodeIfPresent(String.self, forKey: .type)
+            self.type_no = try container.decodeIfPresent(String.self, forKey: .type_no)
+            self.area = try container.decodeIfPresent(String.self, forKey: .area)
+            self.fault = try container.decode(String.self, forKey: .fault)
+            self.zone = try container.decodeIfPresent(String.self, forKey: .zone)
+            self.name = try container.decodeIfPresent(String.self, forKey: .name)
         }
     }
     

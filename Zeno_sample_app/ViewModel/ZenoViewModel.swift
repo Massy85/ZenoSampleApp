@@ -45,7 +45,8 @@ class ZenoViewModel {
         client.completionOnGetPanelMode = { result in
             switch result {
             case .success(let panelModeMO):
-                guard let mode = panelModeMO.mode else { return }
+                let mode = panelModeMO.mode
+                guard mode != .unowned else { return }
                 
                 var container = [ZenoCellObject]()
                 var text: String = ""

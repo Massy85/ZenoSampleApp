@@ -56,7 +56,7 @@ extension GetPanelModeLoaderAdapter: GetPanelModeLoader {
 }
 
 
-private class GetPanelModeMapper {
+internal class GetPanelModeMapper {
     // MARK: - Lifecycle
     
     private init() {}
@@ -69,7 +69,7 @@ private class GetPanelModeMapper {
         public let message: String
         public let token: String
         public let panelCode: String
-        public let data: [RootData]?
+        public let data: RootData
         
         var item: PanelModeMO {
             return PanelModeMO(
@@ -78,10 +78,10 @@ private class GetPanelModeMapper {
                 message: message,
                 token: token,
                 panelCode: panelCode,
-                areaName: data?.first?.areaName,
-                mode: ZenoState.init(mode: data?.first?.mode),
-                area: data?.first?.area,
-                burglar: data?.first?.burglar
+                areaName: data.areaName,
+                mode: ZenoState.init(mode: data.mode) ?? .unowned,
+                area: data.area,
+                burglar: data.burglar
             )
         }
         
@@ -102,10 +102,10 @@ private class GetPanelModeMapper {
             self.token = try container.decode(String.self, forKey: .token)
             self.panelCode = try container.decode(String.self, forKey: .panelCode)
             
-            if let _  = try? container.decodeIfPresent(String.self, forKey: .data) {
-                self.data = nil
+            if let _  = try? container.decode(String.self, forKey: .data) {
+                self.data = RootData()
             } else {
-                self.data = try container.decode([RootData].self, forKey: .data)
+                self.data = try container.decode([RootData].self, forKey: .data).first ?? RootData()
             }
         }
     }
@@ -118,11 +118,26 @@ private class GetPanelModeMapper {
         let area: String
         let burglar: Bool
         
+        init() {
+            self.areaName = ""
+            self.mode = ""
+            self.area = ""
+            self.burglar = false
+        }
+        
         private enum CodingKeys: String, CodingKey {
             case mode
             case area
             case burglar
             case areaName = "area_name"
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            self.areaName = try container.decode(String.self, forKey: .areaName)
+            self.mode = try container.decode(String.self, forKey: .mode)
+            self.area = try container.decode(String.self, forKey: .area)
+            self.burglar = try container.decode(Bool.self, forKey: .burglar)
         }
     }
     

@@ -65,7 +65,7 @@ extension GetEventsLoaderAdapter: EventsLoader {
     }
 }
 
-fileprivate class EventsMapper {
+internal class EventsMapper {
     // MARK: - Lifecycle
     
     private init() {}

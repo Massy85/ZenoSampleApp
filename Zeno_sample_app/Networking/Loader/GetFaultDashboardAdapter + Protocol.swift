@@ -39,7 +39,7 @@ extension GetFaultDashboardAdapter: FaultDashboardLoader {
         client.get(from: request) { result in
             switch result {
             case let .success((data, response)):
-                completion(DashboardMapper.map(data, response))
+                completion(FaultDashboardMapper.map(data, response))
             case .failure:
                 completion(.failure(Error.connectivity))
             }
@@ -47,7 +47,7 @@ extension GetFaultDashboardAdapter: FaultDashboardLoader {
     }
 }
 
-fileprivate class DashboardMapper {
+internal class FaultDashboardMapper {
     // MARK: - Lifecycle
 
     private init() {}

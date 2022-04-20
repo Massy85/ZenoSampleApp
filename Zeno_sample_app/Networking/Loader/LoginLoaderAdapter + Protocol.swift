@@ -58,7 +58,7 @@ extension LoginLoaderAdapter: LoginLoader {
     }
 }
 
-fileprivate class LoginMapper {
+internal class LoginMapper {
     // MARK: - Lifecycle
 
     private init() {}
@@ -102,10 +102,10 @@ fileprivate class LoginMapper {
             self.token = try container.decode(String.self, forKey: .token)
             self.panelCode = try container.decode(String.self, forKey: .panelCode)
             
-            if result {
-                self.data = try container.decode(RootData.self, forKey: .data)
-            } else {
+            if let _ = try? container.decode(String.self, forKey: .data) {
                 self.data = RootData()
+            } else {
+                self.data = try container.decode(RootData.self, forKey: .data)
             }
         }
     }
@@ -132,13 +132,13 @@ fileprivate class LoginMapper {
             if let mac = try container.decodeIfPresent(String.self, forKey: .mac) {
                 self.mac = mac
             } else {
-                self.mac = ""
+                self.mac = ZenoClient.nullValue
             }
             
             if let id = try container.decodeIfPresent(String.self, forKey: .id) {
                 self.id = id
             } else {
-                self.id = ""
+                self.id = ZenoClient.nullValue
             }
         }
     }

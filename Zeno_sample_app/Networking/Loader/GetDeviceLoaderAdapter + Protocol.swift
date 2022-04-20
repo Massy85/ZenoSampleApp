@@ -54,7 +54,7 @@ extension GetPanelDeviceLoaderAdapter: DeviceLoader {
     }
 }
 
-fileprivate class GetDeviceMapper {
+internal class GetDeviceMapper {
     // MARK: - Lifecycle
     
     private init() {}

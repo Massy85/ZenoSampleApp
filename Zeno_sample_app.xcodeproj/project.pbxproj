@@ -25,6 +25,7 @@
 		702D933B27E873F900A04084 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702D933A27E873F900A04084 /* BaseViewController.swift */; };
 		704297A3280EB02C0006BAEB /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704297A2280EB02C0006BAEB /* Credentials.swift */; };
 		704297A5280EB7140006BAEB /* DashboardMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704297A4280EB7140006BAEB /* DashboardMO.swift */; };
+		704297A8280ED8160006BAEB /* LoginMockTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704297A7280ED8160006BAEB /* LoginMockTestAPI.swift */; };
 		7049D319280066B500905DF6 /* GETFaultDashboardTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7049D318280066B500905DF6 /* GETFaultDashboardTestAPI.swift */; };
 		7049D31B280067A100905DF6 /* GetFaultDashboardAdapter + Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7049D31A280067A100905DF6 /* GetFaultDashboardAdapter + Protocol.swift */; };
 		7068CD5927E31AEC00973829 /* SETPanelModeTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7068CD5827E31AEC00973829 /* SETPanelModeTestAPI.swift */; };
@@ -44,6 +45,12 @@
 		70BCD28E27DF84EF0046C3DA /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCD28D27DF84EF0046C3DA /* DashboardViewController.swift */; };
 		70BCD29027DF8FB80046C3DA /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCD28F27DF8FB80046C3DA /* NotificationViewController.swift */; };
 		70BE6BD227984864001CE0F4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BE6BD127984864001CE0F4 /* LoginViewController.swift */; };
+		70D2CB79280FE6B900A1236A /* GetPanelModeMockTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2CB78280FE6B900A1236A /* GetPanelModeMockTestAPI.swift */; };
+		70D2CB7B280FFC6C00A1236A /* SetPanelModeMockTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2CB7A280FFC6C00A1236A /* SetPanelModeMockTestAPI.swift */; };
+		70D2CB7D2810020300A1236A /* GetPanelDeviceMockTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2CB7C2810020300A1236A /* GetPanelDeviceMockTestAPI.swift */; };
+		70D2CB7F281014B700A1236A /* GetEventsMockTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2CB7E281014B700A1236A /* GetEventsMockTestAPI.swift */; };
+		70D2CB8128102EC000A1236A /* GetFaultDashboardMockTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2CB8028102EC000A1236A /* GetFaultDashboardMockTestAPI.swift */; };
+		70D2CB832810363000A1236A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2CB822810363000A1236A /* Helper.swift */; };
 		70E3142327971BF1009D913C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E3142227971BF1009D913C /* AppDelegate.swift */; };
 		70E3142527971BF1009D913C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E3142427971BF1009D913C /* SceneDelegate.swift */; };
 		70E3142A27971BF1009D913C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E3142827971BF1009D913C /* Main.storyboard */; };
@@ -80,6 +87,7 @@
 		702D933A27E873F900A04084 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		704297A2280EB02C0006BAEB /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		704297A4280EB7140006BAEB /* DashboardMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardMO.swift; sourceTree = "<group>"; };
+		704297A7280ED8160006BAEB /* LoginMockTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMockTestAPI.swift; sourceTree = "<group>"; };
 		7049D318280066B500905DF6 /* GETFaultDashboardTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GETFaultDashboardTestAPI.swift; sourceTree = "<group>"; };
 		7049D31A280067A100905DF6 /* GetFaultDashboardAdapter + Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetFaultDashboardAdapter + Protocol.swift"; sourceTree = "<group>"; };
 		7057993F27E1CD0B00003347 /* Client+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+Protocol.swift"; sourceTree = "<group>"; };
@@ -100,6 +108,12 @@
 		70BCD28D27DF84EF0046C3DA /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		70BCD28F27DF8FB80046C3DA /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		70BE6BD127984864001CE0F4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		70D2CB78280FE6B900A1236A /* GetPanelModeMockTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPanelModeMockTestAPI.swift; sourceTree = "<group>"; };
+		70D2CB7A280FFC6C00A1236A /* SetPanelModeMockTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPanelModeMockTestAPI.swift; sourceTree = "<group>"; };
+		70D2CB7C2810020300A1236A /* GetPanelDeviceMockTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPanelDeviceMockTestAPI.swift; sourceTree = "<group>"; };
+		70D2CB7E281014B700A1236A /* GetEventsMockTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventsMockTestAPI.swift; sourceTree = "<group>"; };
+		70D2CB8028102EC000A1236A /* GetFaultDashboardMockTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFaultDashboardMockTestAPI.swift; sourceTree = "<group>"; };
+		70D2CB822810363000A1236A /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		70E3141F27971BF1009D913C /* Zeno_sample_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zeno_sample_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E3142227971BF1009D913C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70E3142427971BF1009D913C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +183,19 @@
 				704297A2280EB02C0006BAEB /* Credentials.swift */,
 			);
 			path = Access;
+			sourceTree = "<group>";
+		};
+		704297A6280ED7F00006BAEB /* MockTestAPI */ = {
+			isa = PBXGroup;
+			children = (
+				704297A7280ED8160006BAEB /* LoginMockTestAPI.swift */,
+				70D2CB78280FE6B900A1236A /* GetPanelModeMockTestAPI.swift */,
+				70D2CB7A280FFC6C00A1236A /* SetPanelModeMockTestAPI.swift */,
+				70D2CB7C2810020300A1236A /* GetPanelDeviceMockTestAPI.swift */,
+				70D2CB7E281014B700A1236A /* GetEventsMockTestAPI.swift */,
+				70D2CB8028102EC000A1236A /* GetFaultDashboardMockTestAPI.swift */,
+			);
+			path = MockTestAPI;
 			sourceTree = "<group>";
 		};
 		7057993C27E1CCC900003347 /* Networking */ = {
@@ -288,7 +315,9 @@
 		70E3143B27971BF3009D913C /* Zeno_sample_appTests */ = {
 			isa = PBXGroup;
 			children = (
+				704297A6280ED7F00006BAEB /* MockTestAPI */,
 				70194A8427E1DE9E00B118D7 /* RealAPI */,
+				70D2CB822810363000A1236A /* Helper.swift */,
 			);
 			path = Zeno_sample_appTests;
 			sourceTree = "<group>";
@@ -439,12 +468,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70D2CB7D2810020300A1236A /* GetPanelDeviceMockTestAPI.swift in Sources */,
 				7068CD5D27E3206400973829 /* GETEventsTestAPI.swift in Sources */,
+				70D2CB79280FE6B900A1236A /* GetPanelModeMockTestAPI.swift in Sources */,
+				70D2CB7F281014B700A1236A /* GetEventsMockTestAPI.swift in Sources */,
+				70D2CB832810363000A1236A /* Helper.swift in Sources */,
 				7068CD5B27E31DA700973829 /* GETPanelDeviceTestAPI.swift in Sources */,
 				70194A8827E1DEE200B118D7 /* LoginTestAPI.swift in Sources */,
 				7049D319280066B500905DF6 /* GETFaultDashboardTestAPI.swift in Sources */,
 				70194A9127E1FC0D00B118D7 /* GETPanelModeTestAPI.swift in Sources */,
 				7068CD5927E31AEC00973829 /* SETPanelModeTestAPI.swift in Sources */,
+				70D2CB8128102EC000A1236A /* GetFaultDashboardMockTestAPI.swift in Sources */,
+				704297A8280ED8160006BAEB /* LoginMockTestAPI.swift in Sources */,
+				70D2CB7B280FFC6C00A1236A /* SetPanelModeMockTestAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

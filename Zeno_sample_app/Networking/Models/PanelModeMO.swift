@@ -39,7 +39,22 @@ public struct PanelModeMO {
     public let token: String
     public let panelCode: String
     public let areaName: String?
-    public let mode: ZenoState?
-    public let area: String?
-    public let burglar: Bool?
+    public let mode: ZenoState
+    public let area: String
+    public let burglar: Bool
+}
+
+extension PanelModeMO: Equatable {
+    public static func == (lhs: PanelModeMO, rhs: PanelModeMO) -> Bool {
+        guard lhs.result == rhs.result else { return false }
+        guard lhs.code == rhs.code else { return false }
+        guard lhs.message == rhs.message else { return false }
+        guard lhs.token == rhs.token else { return false }
+        guard lhs.panelCode == rhs.panelCode else { return false }
+        guard lhs.areaName == rhs.areaName else { return false }
+        guard lhs.mode == rhs.mode else { return false }
+        guard lhs.area == rhs.area else { return false }
+        guard lhs.burglar == rhs.burglar else { return false }
+        return true
+    }
 }
